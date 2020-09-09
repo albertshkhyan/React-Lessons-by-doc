@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="root"> </div>
+
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.25.0/babel.min.js"></script>
+
+    <script type="text/babel">
+        //
+
+        // const element = <h1>Hello, world!</h1>;
+        // ReactDOM.render(
+        //     element,
+        //     document.getElementById('root')
+        // );
+
+
+
+
+
+
+
+
+
+        /* +++++++ Embedding Expressions in JSX ++++++++ */
+        ////Example 1
+        // const name = 'Josh Perez';
+        // const element = <h1>Hello, {name}</h1>;
+
+        // ReactDOM.render(
+        //     element,
+        //     document.getElementById('root')
+        // );
+
+        ////Example 2 - propserov aveli chisht e anel
+        // function formatName(user) {
+        //     return user.firstName + ' ' + user.lastName;
+        // }
+
+        // const user = {
+        //     firstName: 'Harper',
+        //     lastName: 'Perez'
+        // };
+
+        // const element = (
+        //     <h1>
+        //         Hello, {formatName(user)}!
+        //     </h1>
+        // );
+
+        // ReactDOM.render(
+        //     element,
+        //     document.getElementById('root')
+        // );
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        /**************JSX is an Expression Too**************/
+        /* 
+        * jsx-y karoxa e cucadrvel paymanic kaxvac
+            jsx-y karoxa e veradardznel sovorakan funtian
+        */
+        // const formatName = u => {
+        //     if (u) {
+        //         return u.name.toUpperCase()
+        //     }
+        // }
+        // function getGreeting(user) {//aveli lave ogtagorcel komponent
+        //     if (user) {
+        //         return <h1>Hello, {formatName(user)}!</h1>;
+        //     }
+        //     return <h1>Hello, Stranger.</h1>;
+        // }
+
+        // const userData = {
+        //     name: "gvadelupe"
+        // }
+        // ReactDOM.render(
+        //     // getGreeting(userData),
+        //     getGreeting(),
+        //     document.getElementById('root')
+        // );
+
+
+
+
+
+
+
+
+        /**************Specifying Attributes with JSX**************/
+        /*
+        atributnery jsx-um grvum e camel case-ov
+
+        html  |  jsx
+        class |  className
+        */
+        //Example 1: const element = <div className="block"></div>;
+
+        //Example 2: menq karox enq jsx-um dzevavor pakagceri mej nshel javascript artahaytuyun
+        const user = {
+            avatarUrl: "https://vignette.wikia.nocookie.net/mrbean/images/4/4b/Mr_beans_holiday_ver2.jpg/revision/latest/top-crop/width/360/height/450?cb=20181130033425"
+        }
+        const element = <img src={user.avatarUrl} />
+
+        // XNDIR: artacel verevum nshac img tagy
+
+    </script>
+</body>
+
+</html>

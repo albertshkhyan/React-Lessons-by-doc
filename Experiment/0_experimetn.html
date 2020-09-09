@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div id="root"></div>
+
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+
+
+    <script type="text/babel">
+        //
+
+
+        //component da erb funtian kam klassy yndunum  prop ev vereadardznum jsx.
+
+        // const name = 'Gag';
+        // const elem = <h2>Hello {name}</h2>;
+
+        // // const Auto = (props) => {
+        // //     return elem;
+        // // }
+        // function Auto() {
+        //     return elem;
+        // }
+
+        //     console.log(React);
+        //     console.log(ReactDOM);
+
+        // const elem = <input type="text" />;
+
+        //#functional components
+        // const Auto = (props) => {
+        //     return {/*jsx*/}
+        // }
+
+
+        //#class components
+        // class Auto extends React.Component {
+        //     render() {
+        //         return elem
+        //     }
+        // }
+        // class Man extends React.Component {
+
+        // }
+        // class Animal extends React.Component {
+
+        // }
+
+
+
+
+
+
+        ////////////////////////Ex
+
+
+        function formatName(user) {
+            return user.firstName + ' ' + user.lastName;
+        }
+
+        function getGreeting(user) {
+            // typeof user -> object
+            if (user) {
+                // console.log(1);
+                return <h1>Hello, {formatName(user)}!!!!!!!</h1>;
+            }
+            return <h1>Hello, Stranger.....</h1>;
+        }
+
+        const users = {
+            firstName: 'Harper',
+            lastName: 'Perez'
+        };
+
+        ReactDOM.render(
+            <div className="block">{getGreeting(users)} </div>,
+            document.getElementById('root')
+        );
+
+        ///////////clocks - sxal tarberak
+
+
+
+        // function tick() {
+        //     function Clock(props) {
+        //         return <div>
+        //             <h1>Hello {new Date().toLocaleTimeString()}</h1>
+        //         </div>
+        //     }
+        //     ReactDOM.render(
+        //             <Clock />,
+        //             document.getElementById('root')
+        //         )
+        // }
+
+        // setInterval(function () {
+        //     tick()
+        // }, 1000);
+
+
+
+    </script>
+</body>
+
+</html>
