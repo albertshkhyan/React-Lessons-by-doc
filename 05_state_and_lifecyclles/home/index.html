@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+        <div id="root"> </div>
+      
+        <script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+        <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.25.0/babel.min.js"></script>
+         
+       <script type="text/babel">
+       //
+
+//home - increment ev decrement functianery sareqel mek hat functia (incAndDec)
+       class Clock extends React.Component {//React.Component klassy mezi tramadrum gorciqnery voroncic meky setSTate-n e
+            constructor(props) {
+                //2 qayl stayt ogtagorcelu hamar
+                super(props);
+                // propx.x = 10❌❌❌
+                this.state = {
+                    x: 0
+                    // date : new Date(),
+                    
+                }
+            }
+            incAndDec = () => {
+                
+            }
+
+            // increment = () => {
+            //     // console.log("Hello");
+            //     console.log('this.state', this.state);
+            //     // this.state.x = this.state.x + 1//stayti arjeqy vorpeszi poxvi petqa ogtagorcel setState metody❌❌
+            //     this.setState({//✅✅
+            //         x: this.state.x + 1
+            //     });
+            // }
+
+            // decrement = () => {
+            //     // this.state.x = this.state.x - 1//❌❌❌❌
+            //     //stayti arjeqy poxleu hamar petqa ogtagorcel metod ??? -> setState
+            //     this.setState({
+            //         x: this.state.x  - 1
+            //     })
+            // }
+            reset = () => {
+                this.setState({
+                    x: 0
+                })
+            }
+            render() {
+                return (
+                    <div>
+                        <h1>Hello, world!</h1>
+                        {/*1 qayl stayt ogtagorcelu hamar*/}
+                        <p>Counter: {this.state.x}</p>
+                        <button onClick={this.increment}>increment</button>
+                         {/*<h2>It is {this.state.date.toLocaleTimeString()}.</h2>*/}
+                         <button onClick={this.decrement}>decrement</button>
+                         <button onClick={this.reset}>reset</button>
+                    </div>
+                )
+            }
+        }
+
+        {/*3 jnjel date-y propsic*/}
+        ReactDOM.render(
+            <Clock />,
+            document.getElementById('root')
+        );
+
+       </script>
+</body>
+</html>

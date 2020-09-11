@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="root"> </div>
+
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.25.0/babel.min.js"></script>
+
+    <script type="text/babel">
+        //
+
+        /*********************** State and Lifecycle ***********************/
+        ////voprpeszi tarmacnenq komponenty petqa ogtagorcenq state 
+        // function Clock(props) {
+        //     return (
+        //         <div>
+        //             <h1>Hello, world!</h1>
+        //             <h2>It is {props.date.toLocaleTimeString()}.</h2>
+        //         </div>
+        //     );
+        // }
+        // ReactDOM.render(
+        //     <Clock date={new Date()} />,
+        //     document.getElementById('root')
+        // );
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        /*********************** Converting a Function to a Class ***********************/
+
+
+
+        // function Clock(props) {
+        //     return (
+        //         <div>
+        //             <h1>Hello, world!</h1>
+        //             <h2>It is {props.date.toLocaleTimeString()}.</h2>
+        //         </div>
+        //     );
+        // }
+
+        //classayin komponlent
+        // class Clock extends React.Component {
+        //     render() {
+        //         return (
+        //             <div>
+        //                 <h1>Hello, world!</h1>
+        //                 <h2>It is {this.props.date.toLocaleTimeString()}.</h2>
+        //             </div>
+        //         )
+        //     }
+        // }
+
+        // ReactDOM.render(
+        //     <Clock date={new Date()} />,
+        //     document.getElementById('root')
+        // );
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        /******************* Adding Local State to a Class *******************/
+        /*
+        ⚠ propsi ev stayti arjeqnery misht OBJECT
+        props - ready Only
+        state - change - stayti arjeqy karelia poxel i tarberutyun propsi.
+        */
+
+        // class Clock extends React.Component {//React.Component klassy mezi tramadrum gorciqnery voroncic meky setSTate-n e
+        //     constructor(props) {
+        //         //2 qayl stayt ogtagorcelu hamar
+        //         super(props);
+        //         // propx.x = 10❌❌❌
+        //         this.state = {
+        //             x: 0
+        //             // date : new Date(),
+
+        //         }
+        //     }
+        //     increment = () => {
+        //         // console.log("Hello");
+        //         console.log('this.state', this.state);
+        //         // this.state.x = this.state.x + 1//stayti arjeqy vorpeszi poxvi petqa ogtagorcel setState metody❌❌
+        //         this.setState({//✅✅
+        //             x: this.state.x + 1
+        //         });
+        //     }
+
+        //     decrement = () => {
+        //         // this.state.x = this.state.x - 1//❌❌❌❌
+        //         //stayti arjeqy poxleu hamar petqa ogtagorcel metod ??? -> setState
+        //         this.setState({
+        //             x: this.state.x  - 1
+        //         })
+        //     }
+        //     reset = () => {
+        //         this.setState({
+        //             x: 0
+        //         })
+        //     }
+        //     render() {
+        //         return (
+        //             <div>
+        //                 <h1>Hello, world!</h1>
+        //                 {/*1 qayl stayt ogtagorcelu hamar*/}
+        //                 <p>Counter: {this.state.x}</p>
+        //                 <button onClick={this.increment}>increment</button>
+        //                  {/*<h2>It is {this.state.date.toLocaleTimeString()}.</h2>*/}
+        //                  <button onClick={this.decrement}>decrement</button>
+        //                  <button onClick={this.reset}>reset</button>
+        //             </div>
+        //         )
+        //     }
+        // }
+
+        // {/*3 jnjel date-y propsic*/}
+        // ReactDOM.render(
+        //     <Clock />,
+        //     document.getElementById('root')
+        // );
+
+
+
+
+
+        //############## LIFECYCLES - KYANQI CIKLNERY
+
+        //lifecycley da metodenery en vory tramadrum React.Component klassy, amen mi metody voroshaki pahi katarvuma 
+
+        /*
+        * lifecyclen da voroshsaki metodneri havaqacu e voronq katarvum xist hajodkanutyuamb
+        * componentDidMount - katarvuma mek angam render lieluc heto, ays metody naxatesvac e side effect ner anelu hamara
+            Inche side effecty (koxmnaki gorc, kextot gorc)
+                * serverin harcumner uxarkelna
+                * dom-i het ashxatelna (tag stexcel, egin event tal, tag jnjel, event-y jenel, ev ayln)
+                * timernery nunypes side effeckty 
+                    INCHE E TIMERY HAMARVUM SIDE EFFEKT vorevhetev timery ashxatum e asinxron (brauzerna ashxatcnum)
+        */
+
+        class Clock extends React.Component {
+            constructor(props) {
+                super(props);
+                this.state = { date: new Date() };
+            }
+
+            componentDidMount() {//lifecycle - component Did Mount
+                //aystex grvum SIDE EFFECT 
+                // console.log("hello");//compnentDidMOunt- y katarvum e mek angam
+                setInterval(() => {
+                    //menq aystex stayti mej gtnvox date arjeqy petqa poxenq (tarmacnenq)
+                    //stayti arjeqy poxelu hamar petqa ogtagorcel metody vory kochvum e  setState
+                    // this.state.date = new Date()//❌❌❌ 
+                    // this.state = { date : new Date()}//❌❌❌ 
+                    this.setState(
+                        { date: new Date() }
+                    )
+                    console.log('this.state.date', this.state.date);
+
+                }, 1000)
+            }
+
+            componentWillUnmount() {
+                //ashxatum e komponenti jnjveluc araj, michev komponenty jnjvely gorcoxuytyan anum u nor jnjvuma 
+                //FIXME - nenca anel vor timery jnjvi komponenti het miasin
+                //jejely petq kga erb vor sovoreqn react-router-dom orinak -> https://reactrouter.com/web/example/basic
+                clearInterval()
+            }
+
+            render() {//mouninting(karucel - da erb vor karacvum e dom cary) === rendering
+                return (
+                    <div>
+                        <h1>Hello, world!</h1>
+                        <h2>It is {this.state.date.toLocaleTimeString()}.</h2>
+                        // <button>Remove component</button>
+                    </div>
+                );
+            }
+        }
+
+
+        ReactDOM.render(
+            <Clock />,
+            document.getElementById('root')
+        );
+
+
+
+    </script>
+</body>
+
+</html>

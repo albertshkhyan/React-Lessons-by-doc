@@ -9,7 +9,8 @@
 </head>
 
 <body>
-    <div id="root"> </div>
+    <!-- <div id="root">dfjsdl</div> -->
+    <div id="root" />
     <!-- <div class="square"/> -->
 
     <script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
@@ -48,21 +49,19 @@
 
 
 
-/*************** Rendering a Component ***************/
+        /*************** Rendering a Component ***************/
 
-// const element = <div />;
+        // const element = <div />;
 
-// function Welcome(props) {
-//   return <h1>Hello, {props.name}</h1>;
-// }
+        // function Welcome(props) {
+        //   return <h1>Hello, {props.name}</h1>;
+        // }
 
-// const element = <Welcome name="Sara" />;
-// ReactDOM.render(
-//   element,
-//   document.getElementById('root')
-// );
-
-
+        // const element = <Welcome name="Sara" />;
+        // ReactDOM.render(
+        //   element,
+        //   document.getElementById('root')
+        // );
 
 
 
@@ -81,7 +80,9 @@
 
 
 
-/*********************** Composing Components ***********************/
+
+
+        /*********************** Composing Components ***********************/
         /////component compositions - da erb vor komponenti mej haytararvac mek urish komponent
 
 
@@ -133,7 +134,7 @@
 
 
 
-       /*******************  Extracting (kdrel) Components *******************/
+        /*******************  Extracting (kdrel) Components *******************/
 
 
         // const formatDate = (date) => {
@@ -189,7 +190,7 @@
         // );
 
 
-//https://reactjs.org/docs/components-and-props.html , 4. Компоненты и реквизит
+        //https://reactjs.org/docs/components-and-props.html , 4. Компоненты и реквизит
 
 
 
@@ -218,7 +219,20 @@
 
 
 
-/**********************  Props are Read-Only **********************/
+        /**********************  Props are Read-Only **********************/
+
+
+        
+        const Avatar = (props) => {
+            // props.sourceOfImage = "url2"//❌❌❌
+            return <img src={props.sourceOfImage} alt="fsd" />
+
+        }
+
+        ReactDOM.render(
+            <Avatar sourceOfImage="url1" />,
+            document.getElementById('root')
+        );
 
 
 
