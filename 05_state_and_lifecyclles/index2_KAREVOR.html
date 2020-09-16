@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="root"> </div>
+
+    <h1>⚠⚠⚠⚠⚠ HENC STAYIT ARJEQ POXVUMA TEXI E UNENUM RENDER -> </h1>
+
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.25.0/babel.min.js"></script>
+
+    <script type="text/babel">
+        //
+
+//class component - sharunakutyun
+
+//sarqel jam
+//staty da prosps dinamik tesakna, sta-i arjeq karelia poxel (setState), props-i arjeqy chi poxvum
+        class Clock extends React.Component {
+            // constructor(props) {
+            //     super(props);
+            //     this.state = { date: new Date() };
+            //     // this.state = [ date: new Date() ] ;
+            // }
+            //timery ashxatauma asinxron, asxatacnum brazuery
+            //asinxron gorcoxutyuny hamarvuma SIDE-EFFECT (orinak timery kam serverin harcum uxarkely)
+            //vortex e grvum side effeknery classayin funtiayum react-um ? - inc vor funtiayi mej, anuny vonca ayd funtiayi ? - vor lifecyclov petqa anel side effect gorcoxutyun - componentDidMount
+
+
+             //constructor haytarelu 2 dzev. karlia constrctuory chgrel, harc stayty vonc grel
+             //stayty kareli grel aranc constructori, bayc mievnuyn e ayn haytararvuma vor metodi mej ? - satyty hayatararvum e CONSTRUCTOR-I MEJ 
+             // ⚠⚠⚠⚠⚠ HENC STAYIT ARJEQ POXVUMA TEXI E UNENUM RENDER -> 
+             state = { date: new Date() };//
+
+            componentDidMount() {
+                //SIDE EFFECT 
+                this.stop = setInterval( () => {
+                    //amen varkyan petqa poxvi inchy
+                    //inchpes poxel statyi arjeqy - setState
+                    this.setState({
+                        date : new Date()
+                    });
+                    //⚠⚠⚠⚠⚠ HENC STAYIT ARJEQ POXVUMA TEXI E UNENUM RENDER -> 
+                    //this.setStati-i heto kanchvum render metody (kanchum react-y)
+                }, 1000 );
+                
+            }
+
+
+           removeDate = () => {
+                //jnjel timery, setInterval kangnecle -> clearInterval
+                clearInterval(this.stop)
+            }
+
+
+            render() {
+                // let date = 212312
+                // date = 321
+                return (
+                    <div>
+                        <h1>Hello, world!</h1>
+                        <h2>It is this.props.date.toLocaleTimeString (). asypes jam chi lini sareql: Harc ihchu ? (inchi chi lini props-ov poxancvac date-ov jam sarqel) -
+                            asypes chi k    areli nael propsi het
+                            this.props.date = 123 - komponenti nersy propsi arjeqy chi kareli poxel
+                            </h2>
+                        <p>ete date popxakany galisa cherez state, ays depqum menq karox enq jam sarqel: Inchu ? - vorovhetev stayti arjeq dinamik e. aysinqn kareli poxel cherez setState metodov. </p>
+                        <h2>It is {this.state.date.toLocaleTimeString()}.</h2>
+                        <button onClick={this.removeDate}>Remove date</button>
+                    </div>
+                );
+            }
+        }
+
+        //aseq inch yndhanur ban ka state-i ev propsi mijev
+        /* 
+        2-nel obyektner e
+            state === Object
+            props === Object
+        
+        */
+
+        ReactDOM.render(
+            // <Clock  date = {new Date()}             />, //<Clock   aystex grvum props-er            />,
+            <Clock  />,//date-y petqa poxancel cherez stayt
+            document.getElementById('root')
+        )
+
+
+
+        // ⚠⚠⚠⚠⚠ HENC STAYIT ARJEQ POXVUMA TEXI E UNENUM RENDER -> 
+
+
+
+
+
+
+
+
+       
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="root"> </div>
+
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.25.0/babel.min.js"></script>
+
+    <script type="text/babel">
+        //
+
+        /************ Adding Lifecycle Methods to a Class *************/
+        // class Clock extends React.Component {
+        //     constructor(props) {
+        //         super(props);
+        //         this.state = { date: new Date() };
+        //     }
+
+        //     componentDidMount() {
+        //     }
+
+        //     componentWillUnmount() {
+        //     }
+
+        //     render() {
+        //         return (
+        //             <div>
+        //                 <h1>Hello, world!</h1>
+        //                 <h2>It is {this.state.date.toLocaleTimeString()}.</h2>
+        //             </div>
+        //         );
+        //     }
+        // }
+
+
+
+
+        /////////////// react.js doc-i orinak
+        // class Clock extends React.Component {
+        //     constructor(props) {
+        //         super(props);
+        //         this.state = { date: new Date() };
+        //     }
+
+        //     componentDidMount() {
+        //         this.timerID = setInterval(
+        //             () => this.tick(),
+        //             1000
+        //         );
+        //     }
+
+        //     componentWillUnmount() {
+        //         clearInterval(this.timerID);
+        //     }
+
+        //     tick() {
+        //         this.setState({
+        //             date: new Date()
+        //         });
+        //     }
+
+        //     render() {
+        //         return (
+        //             <div>
+        //                 <h1>Hello, world!</h1>
+        //                 <h2>It is {this.state.date.toLocaleTimeString()}.</h2>
+        //             </div>
+        //         );
+        //     }
+        // }
+
+        // ReactDOM.render(
+        //     <Clock />,
+        //     document.getElementById('root')
+        // );
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        /************ Using State Correctly *************/
+
+
+        /*
+        * stayi masin petq imanal 3 ban
+            1. Do Not Modify State Directly - Не изменять состояние напрямую
+                // Wrong❌❌❌❌
+                this.state.comment = 'Hello';
+
+                // Correct✅✅✅
+                this.setState({comment: 'Hello'});
+            
+            2. State Updates May Be Asynchronous -  Обновления состояния могут быть асинхронными
+
+            // Wrong ❌❌❌❌
+            this.setState({
+            counter: this.state.counter + this.props.increment,
+            });
+        */
+
+
+
+        //********* 2. State Updates May Be Asynchronous
+
+        class Counter extends React.Component {
+            state = { x: this.props.increment }
+
+            render() {
+                return (
+                    //JSX-I kannery ayspex xaxtvuma e ❌❌❌
+                    // <button>+</button>
+                    // <button>-</button>
+                    //erb vor child-y mekic avel en, apa nranq petq linen mek urish tag-i mej
+
+                    //JSX - CORRECT VARIANT
+
+                    <div>
+                        {/*<h2>Counter: {this.state.increment} ❌❌❌ - qani vor incrementy gtnvum e props obtyekti mej</h2>*/}
+                        <h2>Counter: {this.state.x} </h2>
+                        <button>+</button>
+                        <button>-</button>
+                        <button>RESET</button>
+                    </div>
+                )
+            }
+        }
+
+        //ays xndri imast ena vor ete menq poxancinq 5 apa 5-ic petq sksi increment anel
+        ReactDOM.render(
+            <Counter increment={10} />,
+            document.getElementById('root')
+        )
+
+
+        //tnayin - https://reactjs.org/docs/state-and-lifecycle.html - bacatrel 2- ev error ketery
+
+    </script>
+</body>
+
+</html>

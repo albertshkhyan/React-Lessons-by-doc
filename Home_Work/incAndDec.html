@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="root"> </div>
+
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.25.0/babel.min.js"></script>
+
+    <script type="text/babel">
+        //
+
+        //home - increment ev decrement functianery sareqel mek hat functia (incAndDec)
+        class Clock extends React.Component {//React.Component klassy mezi tramadrum gorciqnery voroncic meky setSTate-n e
+            constructor(props) {
+                //2 qayl stayt ogtagorcelu hamar
+                super(props);
+                // propx.x = 10❌❌❌
+                this.state = {
+                    x: 0
+                    // date : new Date(),
+
+                }
+            }
+            incAndDec = (e) => {
+                //     console.log(' e.target.innerText', e.target.innerText);
+                //     //1 payamani tesak - if ev elese
+                //     if (e.target.innerText === "increment") {
+                //         this.setState({//
+                //             x: this.state.x + 1
+                //         });
+                //     }
+                //     else if (e.target.innerText === "decrement") {
+                //         this.setState({//✅✅
+                //             x: this.state.x - 1
+                //         });
+                //     }
+                //     else {
+                //         this.setState({//✅✅
+                //             x: 0
+                //         });
+                //     }
+                //2. toxayin payaman ? : 
+                //3 switch, case
+                switch (e.target.innerText) {//switch-o mej grvum paymany, incha petqa stugi xist havassari, switch asxatuma miayn havasarneri het
+                    case "increment": this.setState({ x: this.state.x + 1 });break;
+                    case "decrement": this.setState({ x: this.state.x - 1 });break;
+                    default: this.setState({ x: 0 });
+                }
+            }
+
+
+            // decrement = (props) => {
+            //     // this.state.x = this.state.x - 1//❌❌❌❌
+            //     //stayti arjeqy poxleu hamar petqa ogtagorcel metod ??? -> setState
+            //     this.setState({
+            //         x: this.state.x  - 1
+            //     })
+            // }
+            // increment = (props) => {
+            //     // this.state.x = this.state.x - 1//❌❌❌❌
+            //     //stayti arjeqy poxleu hamar petqa ogtagorcel metod ??? -> setState
+            //     this.setState({
+            //         x: this.state.x  + 1
+            //     })
+            // }
+            // reset = (props) => {
+            //     this.setState({
+            //         x: 0
+            //     })
+            // }
+
+            ////
+            fnReturnJsx = () => {
+                return <div>Hello im jsx</div>
+            }
+
+
+            render() {
+                return (
+                    <div>
+                        <h1>Hello, world!</h1>
+                        {/*1 qayl stayt ogtagorcelu hamar*/}
+                        <p>Counter: {this.state.x}</p>
+                        <button onClick={this.incAndDec}>increment</button>
+                        <button onClick={this.incAndDec}>decrement</button>
+                        <button onClick={this.incAndDec}>RESET</button>
+                    </div>
+                )
+            }
+        }
+
+
+
+
+
+        ReactDOM.render(
+            <Clock />,
+            document.getElementById('root')
+        );
+
+    </script>
+</body>
+
+</html>

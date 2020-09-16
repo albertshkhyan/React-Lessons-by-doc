@@ -20,15 +20,15 @@
 
 
 //  INCHE E TIMERY HAMARVUM SIDE EFFEKT- vorevhetev timery ashxatum e asinxron (brauzerna ashxatcnum)
-// setTimeout(() => {
-//     console.log(1);
-// })
+setTimeout(() => {//-,jsy talisa brauzerin
+    console.log(1);
+})
 
-// console.log(2);
+console.log(2);
 
-// setTimeout(() => {
-//     console.log(3);
-// })
+setTimeout(() => {
+    console.log(3);
+})
 //2,1,3
 
 let stop = setInterval(() => {
