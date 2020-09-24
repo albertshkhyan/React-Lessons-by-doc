@@ -17,7 +17,7 @@
             height: 100vh;
         }
 
-        .red {
+        /* .red {
             background: red;
         }
 
@@ -28,7 +28,7 @@
 
         .orange {
             background: orange;
-        }
+        } */
     </style>
 </head>
 
@@ -84,7 +84,7 @@
                     case "red": this.setState({ color: "red" }); break
                     case "blue": this.setState({ color: "blue" }); break
                     case "orange": this.setState({ color: "orange" }); break
-                    case "random": this.setState({ color: "#457821" }); break// # TNAYIN NENC ANEL VOR GUYNY LINI PATAHAKAN
+                    case "random": this.setState({ color: this.generateRandomColor() }); break// # TNAYIN NENC ANEL VOR GUYNY LINI PATAHAKAN
                     default: null;
                 }
 
@@ -95,17 +95,22 @@
 
             //    console.log("hello",this);
             // }
+            
 
+            generateRandomColor = () => {
+                    let r = Math.round((Math.random() * 255)); 
+                    let g = Math.round((Math.random() * 255)); 
+                    let b = Math.round((Math.random() * 255)); 
+                    return 'rgb(' + r + ', ' + g + ', ' + b + ')';
+            };
             render() {
                 const styleObject = {
-                    width: "100%",
-                    height: "100vh",
                     // position: "absolute"
                     backgroundColor: this.state.color
                 }
                 return (
-                    // <div style={styleObject}>
-                    <div className={"desktop-color " + this.state.color}>
+                    // <div style={styleObject}> {}
+                    <div style={styleObject} className="desktop-color">
                         {/* <div style="background: color"></div> 
                         react style atributi arjeqy misht obyekt petqa grvi, vortex hatktyunneri css -i hatkutyunneri anunner en, grvum camel caysov
                     */}
