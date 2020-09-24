@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+        <div id="root"> </div>
+
+        
+      
+        <script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+        <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.25.0/babel.min.js"></script>
+         
+       <script type="text/babel">
+       //<button>OFF</button> - stexcel anjatox ev miocanox button, off-jamanak petqa guyny lini karmik, on-i jamanak kanach.
+
+        //1 variant
+        // class ToggleButton extends React.Component {
+        //     state = {
+        //         onAndOff: "on", //on || of
+        //     }
+        //     handler = () => {
+        //         console.log(11111111111111);
+        //         if(this.state.onAndOff === "on") {
+        //             this.setState({onAndOff: "off"})
+        //         } else {
+        //             this.setState({onAndOff: "on"})
+        //         }
+        //     }
+        //     render() {
+        //         return (
+        //             <button onClick={this.handler}>{this.state.onAndOff}</button>
+        //         )
+        //     }
+        // }
+
+        //2 variant
+        class ToggleButton extends React.Component {
+            state = {
+                onAndOff: false, //on || of
+            }
+            handler = () => {
+                this.setState({onAndOff: !this.state.onAndOff});
+            }
+            //ternary operator ? (harcakani payaman) - jsx-um payman grelu hamar petqa ogtagorcel ternari opertaory
+            render() {
+                return (
+                    <button onClick={this.handler}> 
+                        {/* { if(this.state.onAndOff ) "on" : "off" } ❌*/}
+                        { (this.state.onAndOff ) ? "on" : "off" }
+                    </button>
+                )
+            }
+        }
+
+
+       function App() {
+           return (
+                <ToggleButton />
+           )
+       }
+
+       ReactDOM.render(
+           <App/>,
+           document.querySelector('#root')
+       )
+       
+
+
+       
+       </script>
+</body>
+</html>

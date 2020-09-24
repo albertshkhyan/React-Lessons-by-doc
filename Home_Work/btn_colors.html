@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .desktop-color {
+            width: 100%;
+            height: 100vh;
+        }
+
+        /* .red {
+            background: red;
+        }
+
+        .blue {
+            background: blue;
+
+        }
+
+        .orange {
+            background: orange;
+        } */
+    </style>
+</head>
+
+<body>
+
+    <!-- <div style="background: color"></div> -->
+    <div id="root"> </div>
+
+    <h2>React patvurab <br>
+        Erb vor statyty poxvum e inche texi unenum ? <br>
+        erb vor stayty poxvuma noric kanchvum render.
+    </h2>
+
+
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.25.0/babel.min.js"></script>
+
+    <script type="text/babel">
+        // hamapatasxan guyi anunov button vra click aneluc ekrani guyny darna button mej grvac guyni,
+        //bayc nayev kar random button,
+        // vori vra click aneluc hete ekrani guyny petqa darna patahakan guyni
+
+        class Colors extends React.Component {
+            constructor(props) {
+                super(props);
+                this.state = {
+                    // incpetqa pahvi biznes logikayum (local biznes logika)
+                    color: null//default value, initial value, skzbnakan fayler
+                }
+                // this.handleClick = this.handleClick.bind(this);
+
+
+            }
+
+            handleClick2 = (eventObject) => {
+                // console.log("koko");
+                //aystex petqa grvi nenc logika, vor buttona vra vor click e arvel et anunin hamaptasxan guynov petqa nkarvi ekrani gorcoxutyuny
+                // if(???? === red) {
+                //     style = "red"
+                // }
+                // else if( === random) {
+                //     style = 
+                // }
+                // else {//else if(??? === null)
+                //     style = "white"
+                // }
+
+
+                // console.log('eventObject', eventObject);
+                // console.log('eventObject.target', eventObject.target.innerText);
+                switch (eventObject.target.innerText) {
+                    case "red": this.setState({ color: "red" }); break
+                    case "blue": this.setState({ color: "blue" }); break
+                    case "orange": this.setState({ color: "orange" }); break
+                    case "random": this.setState({ color: this.generateRandomColor() }); break// # TNAYIN NENC ANEL VOR GUYNY LINI PATAHAKAN
+                    default: null;
+                }
+
+
+            }
+
+            // handleClick() {
+
+            //    console.log("hello",this);
+            // }
+            
+
+            generateRandomColor = () => {
+                    let r = Math.round((Math.random() * 255)); 
+                    let g = Math.round((Math.random() * 255)); 
+                    let b = Math.round((Math.random() * 255)); 
+                    return 'rgb(' + r + ', ' + g + ', ' + b + ')';
+            };
+            render() {
+                const styleObject = {
+                    // position: "absolute"
+                    backgroundColor: this.state.color
+                }
+                return (
+                    // <div style={styleObject}> {}
+                    <div style={styleObject} className="desktop-color">
+                        {/* <div style="background: color"></div> 
+                        react style atributi arjeqy misht obyekt petqa grvi, vortex hatktyunneri css -i hatkutyunneri anunner en, grvum camel caysov
+                    */}
+                        <h3>Color: {this.state.color}</h3>
+                        <button onClick={this.handleClick2}>red</button>
+                        <button onClick={this.handleClick2}>blue</button>
+                        <button onClick={this.handleClick2}>orange</button>
+                        <button onClick={this.handleClick2}>random</button>
+                    </div>
+                )
+            }
+        }
+
+        ReactDOM.render(
+            <Colors />,
+            document.getElementById('root')
+        );
+
+    </script>
+</body>
+
+</html>
+</script>
+</body>
+
+</html>
+
+</script>
+</body>
+
+</html>

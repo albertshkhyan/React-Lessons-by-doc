@@ -120,13 +120,43 @@
         */
 
 
-
         //********* 2. State Updates May Be Asynchronous
-
+        ////tnayin cucyc tal naxord arjeqy   
         class Counter extends React.Component {
-            state = { x: this.props.increment }
+            state = { x: this.props.inc }
+
+
+            increment = () => {
+                //incorrect
+                // this.setState({x: this.state.x + 1});//nerkayis stayti arjeqy petqa gumarme 1-ov
+
+                //correct 
+                //qani vor stayty ev propsy iraric ankax (asinxron) en ashxatum, menq petqa hashvi arnenq naxord propsy arjeqy
+
+                this.setState((state, props) => {
+                    // debugger
+                    // console.log('props', props);
+                    console.log('state', state);//{x: }
+                    return {
+                        // x: this.state.x + this.state.x //sxal e qani vor menq props-ic kaxvac vochte staytic
+                        x: this.state.x + this.props.inc
+                    }
+                })
+
+            }
+
+            decrement = () => {
+                this.setState({ x: this.state.x - 1 });
+            }
+
+            reset = () => {
+                this.setState({ x: 0 });
+            }
+
 
             render() {
+                console.log('render ', this.state);//{x: }
+
                 return (
                     //JSX-I kannery ayspex xaxtvuma e ❌❌❌
                     // <button>+</button>
@@ -138,22 +168,111 @@
                     <div>
                         {/*<h2>Counter: {this.state.increment} ❌❌❌ - qani vor incrementy gtnvum e props obtyekti mej</h2>*/}
                         <h2>Counter: {this.state.x} </h2>
-                        <button>+</button>
-                        <button>-</button>
-                        <button>RESET</button>
+                        <button onClick={this.increment}>+</button>
+                        <button onClick={this.decrement}>-</button>
+                        <button onClick={this.reset}>RESET</button>
+                        <h3>Previous value: </h3>
                     </div>
                 )
             }
         }
 
         //ays xndri imast ena vor ete menq poxancinq 5 apa 5-ic petq sksi increment anel
+        // ReactDOM.render(
+        //     <Counter inc={20} />,
+        //     document.getElementById('root')
+        // )
+
+
+        //tnayin - https://reactjs.org/docs/state-and-lifecycle.html - bacatrel 2- ev error ketery
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        //********* 2. State Updates May Be Asynchronous - PART 2
+
+        class Counter2 extends React.Component {
+            //partadir e constructor-i mej constructori mej lini stayty ? - voch partadir che, qani vor stayty avtomat kerpov stexcvuma constructori mej ete menq chen haytararum
+
+            // constructor(props) {
+            //     super(props)
+            //     this.state = {
+            //         inc: 0,
+            //         dec: 0,
+            //     }
+            // }
+
+            state = {
+                inc: 0,
+                dec: 0,
+            }
+
+
+            inc = (event) => {
+                this.setState({
+                    //State Updates are Merged
+                    // ...this.state, - irar kpcnelu hashiv menq karox copy chenel naxord stayty arjeqnery
+                    //dec
+                    inc: this.state.inc + 1
+                })
+            }
+
+            render() {
+                return (
+                    <div>
+                        <hr />
+                        <h2>Task 2</h2>
+                        <button onClick={this.inc}>Increment:{this.state.inc}</button>
+                        <button onClick={this.handleClick}>Decrement:{this.state.dec}</button>
+                    </div>
+                )
+            }
+
+        }
+
+
+
+
         ReactDOM.render(
-            <Counter increment={10} />,
+            <div>
+                <Counter inc={20} />
+                <Counter2 />
+            </div>,
+            //App - ayspes chist grel, verevi kody petqa lini App komponenti mej
             document.getElementById('root')
         )
 
 
-        //tnayin - https://reactjs.org/docs/state-and-lifecycle.html - bacatrel 2- ev error ketery
+
+
+
 
     </script>
 </body>

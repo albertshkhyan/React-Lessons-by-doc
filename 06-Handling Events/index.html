@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="root"> </div>
+
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.25.0/babel.min.js"></script>
+
+    <script type="text/babel">
+        //handling - mshakel - eventnery misht petqa mshakel, evenety mshakelu hamar mez petqa funkcia, dra hamar menq jsx-um grum enq ayspes
+        /*
+        
+        <button onClick={ misht event arjeqy funkica e (aystex grvum e funkcia anun) }> </button>
+        */
+
+        //#IN HTML
+        // <button onclick="activateLasers(event)">
+        //     Activate Lasers
+        // </button>
+
+        //#IN RECT
+        // <button onClick={activateLasers}>
+        //         Activate Lasers
+        // </button>
+
+
+
+        class Radio extends React.Component {
+            state = {x: 0}
+
+
+            handleClick = (e) => {
+                e.preventDefault();//default event-i pahvacy anjatum e
+                this.setState({x: 1});//stayty poxveluc heto katarvum e render, harc componentDidMount kkanchi te che ? - 
+
+            }
+            componentDidMount() {
+                //componentDidMount - kanchvum e amena arajin rendering-ic heto
+                console.log("hello");
+            }
+            render() {
+                console.log('this.state RENDER - WHY NOT WORKING COMPONNE DID MOUNT ?', this.state);
+                return (
+                    <div>
+                    <form>
+                        <label htmlFor="">
+                            male
+                        </label>
+                        <input type="radio" />
+                        <b>and </b>
+                        <input type="radio" />
+                        <label htmlFor="">
+                            female
+                        </label>
+                        {/*erb vor button drvac form tegi mej ira vra click aneluc heto ejy refresh linum*/}
+                        <button onClick={this.handleClick}>Submit (uxarkel)</button>
+                    </form>
+                    <button>Submit form-ic durs (uxarkel)</button>
+                </div>
+                )
+            }
+        }
+        ReactDOM.render(
+            <Radio />,
+            document.getElementById('root')
+        )
+
+
+
+    </script>
+</body>
+
+</html>
