@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .desktop-color {
+            width: 100%;
+            height: 100vh;
+        }
+      
+    </style>
+</head>
+
+<body>
+
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.25.0/babel.min.js"></script>
+
+    <script type="text/babel">
+
+
+        class Color extends React.Component {
+            constructor(props) {
+                super(props);
+                this.state = {   
+                    color: null
+                }
+            }
+
+            handleClick = (eventObject) => {
+
+                switch (eventObject.target.innerText) {
+                    case "DEFAULT": this.setState({ color: "grey" }); break
+                    case "PRIMARY": this.setState({ color: "blue" }); break
+                    case "SECONDARY": this.setState({ color: "red" }); break
+                    // case "DISABLED": this.setState({ color: "lightgrey" }); break
+                    default: null;
+                }
+            }
+            
+            render() {
+                const styleObject = {
+                    backgroundColor: this.state.color
+                }
+                return (
+        
+                    <div style={styleObject} className="desktop-color"> 
+
+                        <button onClick={this.handleClick}>DEFAULT</button>
+                        <button onClick={this.handleClick}>PRIMARY</button>
+                        <button onClick={this.handleClick}>SECONDARY</button>
+                       { /* <button onClick={this.handleClick2}>DISABLED</button>*/}
+                     
+                    </div>
+                )
+            }
+        }
+
+        ReactDOM.render(
+            <Color />,
+            document.getElementById('root')
+        );
+
+    </script>
+
+</html>
