@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="root"> </div>
+
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.25.0/babel.min.js"></script>
+
+    <script type="text/babel">
+        //
+        /*Handling Events
+
+        <button onClick={(e) => this.deleteRow(id, e)}>Delete Row</button>
+        <button onClick={this.deleteRow.bind(this, id)}>Delete Row</button>
+        
+        */
+
+        class Table extends React.Component {
+
+
+
+            render() {
+                const users = [
+                    {name: "Vigen", email: "Vigen@mail.ru"},
+                    {name: "Armen", email: "Armen@mail.ru"},
+                    {name: "Alik", email: "Alik@mail.ru"},
+                ];
+
+                return (
+                    <React.Fragment>
+                        <h2>Users</h2>
+                        <table border="1">
+                            <tr>
+                                <td>Vigen</td>
+                                <td>v@mail.com</td>
+                                <td>
+                                    <button>X</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Armen</td>
+                                <td>armen@mail.com</td>
+                                <td>
+                                    <button>X</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Alik</td>
+                                <td>alik@mail.com</td>
+                                <td>
+                                    <button>X</button>
+                                </td>
+                            </tr>
+                        </table>
+                    </React.Fragment>
+                )
+            }
+        }
+
+
+        function App() {
+            return (
+                <Table />
+            );
+        }
+
+
+
+        ReactDOM.render(
+            <App />,
+            document.querySelector('#root')
+        )
+
+
+    </script>
+</body>
+
+</html>
