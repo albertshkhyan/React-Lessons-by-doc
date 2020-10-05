@@ -26,6 +26,10 @@
 
         class Table extends React.Component {
 
+        deleteRow = (r) => {
+           let i = r.parentNode.parentNode.rowIndex;
+           document.getElementById("myTable").deleteRow(i);
+       }
 
 
             render() {
@@ -35,29 +39,34 @@
                     {name: "Alik", email: "Alik@mail.ru"},
                 ];
 
+                // for(var i = users.length - 1; i > 0; i--){
+                //     users.delete(i);
+                // }
+
+
                 return (
                     <React.Fragment>
                         <h2>Users</h2>
-                        <table border="1">
+                        <table id= "myTable" border="1">
                             <tr>
                                 <td>Vigen</td>
                                 <td>v@mail.com</td>
                                 <td>
-                                    <button>X</button>
+                                    <button value="Delete" onClick={this.deleteRow}>X</button>
                                 </td>
                             </tr>
                             <tr>
                                 <td>Armen</td>
                                 <td>armen@mail.com</td>
                                 <td>
-                                    <button>X</button>
+                                    <button value="Delete" onClick={this.deleteRow}>X</button>
                                 </td>
                             </tr>
                             <tr>
                                 <td>Alik</td>
                                 <td>alik@mail.com</td>
                                 <td>
-                                    <button>X</button>
+                                    <button value="Delete" onClick={this.deleteRow}>X</button>
                                 </td>
                             </tr>
                         </table>
