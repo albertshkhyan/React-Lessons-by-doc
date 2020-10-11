@@ -99,28 +99,41 @@
 
 
 
-
         /*************************Passing Arguments to Event Handlers *************************/
 
         class LoggingButton extends React.Component {
 
+
+            constructor(props) {
+                super(props)
+                this.state = {
+                    x: 1
+                }
+                // propx.x= 10//
+            }
+
+
             handleClick = (e, id) => {
                 console.log('id', id);
+                //inch kareli setState-in vorpes argument
+                this.setState(function () { })//avel hnaravroutyun - karum vekali naxord staty
+                this.setState({})//ashxatuma  nerkayis state-i het
 
             }
 
-            handleClickEvent1 = (e) =>{
+            handleClickEvent1 = (e) => {
                 // console.log('this', this);
                 this.handleClick(1)
             }
-            handleClickEvent2 = (e) =>{
+            handleClickEvent2 = (e) => {
                 // console.log('this', this);
                 this.handleClick(2)
             }
             //React.Fragment - ayd komponenti shnrohiv azatvum enq lracucchich tevgeric
-            render() {  
+            render() {
                 return (
                     <React.Fragment>
+                        <h2>Passing Arguments to Event Handlers</h2>
                         <div>
                             <p>Hello x 1</p>
                             <button onClick={this.handleClickEvent1}>X 1</button>
@@ -129,8 +142,7 @@
                             <p>Hello x 2</p>
                             <button onClick={this.handleClickEvent2}>X 2</button>
                         </div>
-                        <hr/>
-                        <h2>Correct variant and more short</h2>
+                        <h3>Correct variant and more short</h3>
                         <div>
                             <p>Hello x 3</p>
                             <button onClick={(event) => this.handleClick(event, 3)}>X 3</button>
@@ -145,8 +157,9 @@
         }
 
         function App() {
+
             return (
-                <LoggingButton />
+                <LoggingButton x={10} /> // {x: "1"}
             );
         }
 
