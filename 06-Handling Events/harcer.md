@@ -173,3 +173,15 @@ class App extends React.Component {
 		return text;
 	}
 }
+
+
+
+
+
+
+# 11.10.2020
+
+* preventDefault
+
+* current theme - how pass argument to event handler
+
