@@ -304,8 +304,69 @@
 
         /*********************** JSX allows embedding any expression (cikl fral anmijapes jsx-i mej) ************************ */
 
-            /*tnayin brigad*/
-  
+
+        function ListItem(props) {
+            console.log('ListItem', props);
+
+            const numbers2 = [6, 7, 8, 9, 10];//map i mej kara lini mek urish map
+            console.log('numbers2', numbers2);
+            return (
+                <div>
+                    <li>{props.value}</li>
+                    {/*misht map cikli mej petqa grel return*/}
+                    <ul>
+                        {numbers2.map(item => {
+                            return <li>Hello {item}</li>
+                        })}
+                    </ul>
+                </div>
+            )
+        }
+
+        function NumberList(props) {
+            const numbers = props.numbers;
+            // console.log('numbers', numbers);
+
+            const numberlist = numbers.map((number) =>
+                <ListItem key={number.toString()}
+                    value={number} />
+            )
+            return (
+                <ul>
+                    {/*sxal tarberak - petqa map lini dzevavor pakagceri mej*/}
+                    {/*
+                            numbers.map((number) =>
+                            <ListItem key={number.toString()}
+                                value={number} />
+                            )
+                        */}
+
+                    {/*1 tarberak - chist tarberak*/}
+                    {/*
+                      {numbers.map((number) =>
+                        <ListItem key={number.toString()}
+                            value={number} />
+                    )}
+                    */}
+
+                    {/*2 tarberak*/}
+                    {numberlist}
+                </ul>
+            );
+        }
+
+        function App() {
+
+            const numbers = [1, 2, 3, 4, 5]
+            return (
+                <NumberList numbers={numbers} />
+            )
+        }
+
+        ReactDOM.render(
+            <App />,
+            document.querySelector('#root')
+        )
 
 
     </script>

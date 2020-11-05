@@ -7,7 +7,8 @@
 
 ------------------ lesson 10 -----------------------
 list and keys
-    * tnayin -  map in map (asxatov vory uni ira entaka ashxatoxy)
+    * tnayin -  sarqel shaxmati taxtak
 
 ---------------------------
 
+ 
