@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="root"> </div>
+
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.25.0/babel.min.js"></script>
+
+    <script type="text/babel">
+        //
+
+        /***************** Lists and Keys  *****************/
+
+
+        // const numbers = [1, 2, 3, 4, 5];
+        // const doubled = numbers.map((number) => number * 2);
+        // console.log(doubled);
+
+
+
+
+        /***************** Rendering Multiple Components  *****************/
+
+
+        // const numbers = [1, 2, 3, 4, 5];
+        // const listItems = numbers.map((number) =>
+        //     <li>{number}</li>
+        // );
+
+
+
+        /*--------------------------------------------------*/
+        //#Example 1 - aranc porpsi 
+        //jsx-y kara lini mek urish popoxakani mej
+        // const App = () => {
+        //     return <div>
+        //         <ul>
+        //             {listItems}
+        //         </ul>
+        //         {[<h1>Hello</h1>, <p>Goodbye</p>]}{/*react-y avtomat kerpov zangvaci chakertnery hanuma*/}
+        //     </div>
+        // }
+
+        // ReactDOM.render(
+        //     //1 argumetn, 
+        //     <App />,
+        //     //2 argument
+        //     document.getElementById("root")
+        // )
+
+
+        /*--------------------------------------------------*/
+
+        //#Example 2 Basic List Component
+        // function NumberList(props) {
+        //     const numbers = props.numbers;
+        //     const listItems = numbers.map((number) =>
+        //         <li>{number}</li>
+        //     );
+        //     return (
+        //         <ul>{listItems}</ul>
+        //     );
+        // }
+
+        // // const numbers = [1, 2, 3, 4, 5];
+        // const numbers = [6, 7, 8, 9, 10];
+        // ReactDOM.render(
+        //     <div>
+        //         {/*vorpeszi dinamik lini menq karox enq zangvacy poxancel cherez props*/}
+        //         <NumberList numbers={numbers} />
+        //     </div>,
+        //     document.getElementById('root')
+        // );
+
+
+        // / /!\ - menq sovorecinq vonc karelia cikl ogtagorcel JSX - um
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        /******************************************** Keys ***********************************************/
+
+        /*
+        elementneri vra cikl fraluc misht peqta poxancel key atributy jsx elementin.
+                Inchu ?
+                    key - naxatesvaca vorpeazi react karoxana jsx elementi inqnutyuny hastati (vorpeszi karana tarberi)
+                    key da banali bar e react-um (attribut)
+
+
+        */
+
+        //# Example 1
+
+        //ays orinaky aveli chist e
+        // const numbers = [1, 2, 3, 4, 5];
+        // const listItems = numbers.map((number) =>
+        //     // <li key={number.toString()}>
+        //     <ul>
+        //         <li key={number}>
+        //             {number}
+        //             <button>remove</button>
+        //         </li>
+        //     </ul>
+        // );
+
+        // const App = () => {
+        //     return <div>
+        //         {listItems}
+        //     </div>
+        // }
+        // ReactDOM.render(
+        //     <App />,
+        //     document.getElementById("root")
+        // )
+
+
+        //# Example 2
+
+        //* atribut key naxtesvac e jsx elementy indetifikacnelu (tarberelu) hamar
+        // const todos = [
+        //     {
+        //         id: "2",
+        //         text: "goodbye"
+        //     },
+        //     {
+        //         id: "1",
+        //         text: "hello"
+        //     },
+        // ]
+
+
+        // const todoItems = todos.map((todo, index) =>
+        //     // Erb vor id chka karox enq ogtagorcel zangvaci indexy, bayc sa aydqan el lav chi
+        //     // <li key={index}> //index chi kareli veragrel key-in vorovhetev zangvaci elementneri hertakanutyuny karox e poxvel. erb vor chenq grum key atributy reacty default talisa ayd key-y u iran veragruma index
+        //     <li key={todo.id}>
+        //         {todo.text}
+        //     </li>
+        // );
+
+        // const App = () => {
+        //     return <div>
+        //         {todoItems}
+        //     </div>
+        // }
+        // ReactDOM.render(
+        //     <App />,
+        //     document.getElementById("root")
+        // )
+
+
+
+
+
+
+
+
+
+
+
+        /******************* Extracting Components with Keys *********************/
+
+        /*
+        # extract - da erb vor jsx y vekalum enq u texadrum enq urish komponenti mej.
+        ------------------------------
+        * key misht petqa veragrel drsinin ()
+                erb vor komponenty extract enq anum menq petqa key tanq ayd komponentin vochte ira nersi elementi vra.
+        */
+
+
+        //# Example 1: Incorrect Key Usage - sxal tarberak key oggtagorcelu
+        // function ListItem(props) {
+        //         const value = props.value;
+        //         return (
+        //             // Wrong! There is no need to specify the key here:
+        //             <li key={value.toString()}>
+        //                 {value}
+        //             </li>
+        //         );
+        //     }
+
+        //     function NumberList(props) {
+        //         const numbers = props.numbers;
+        //         const listItems = numbers.map((number) =>
+        //             // Wrong! The key should have been specified here:
+        //             <ListItem value={number} />
+        //         );
+        //         return (
+        //             <ul>
+        //                 {listItems}
+        //             </ul>
+        //         );
+        //     }
+
+        //     const numbers = [1, 2, 3, 4, 5];
+        //     ReactDOM.render(
+        //         <NumberList numbers={numbers} />,
+        //         document.getElementById('root')
+        //     );
+
+
+        //# Example 2: Correct Key Usage - chist tarberak key ogtagrocelu
+
+        // function ListItem(props) {
+        //     // Correct! There is no need to specify the key here:
+        //     return <li>{props.value}</li>;
+        // }
+
+        // function NumberList(props) {
+        //     const numbers = props.numbers;
+        //     const listItems = numbers.map((number) =>
+        //         // Correct! Key should be specified inside the array.
+        //         <ListItem key={number.toString()} value={number} />
+        //     );
+        //     return (
+        //         <ul>
+        //             {listItems}
+        //         </ul>
+        //     );
+        // }
+
+        // const numbers = [1, 2, 3, 4, 5];
+        // ReactDOM.render(
+        //     <NumberList numbers={numbers} />,
+        //     document.getElementById('root')
+        // );
+
+
+
+        /*
+        /!\ erb vor props-i arjeq ches tali react avtomat iran talis arjeqy true:
+        Orinak
+        */
+        // const posts = [
+        //     { id: 1, title: 'Hello World', content: 'Welcome to learning React!' },
+        //     { id: 2, title: 'Installation', content: 'You can install React from npm.' }
+        // ];
+        // ReactDOM.render(
+        //     // <Blog posts={posts} />,
+        //     <Blog posts />, // {posts: true}
+        //     document.getElementById('root')
+        // );
+
+
+        /*
+            /!\key- ches karox ogtagorcel komponenti nersum, qani vor aync banali bar e
+         Orinak
+         */
+
+        // function Post(props) {
+        //     //props.key - ERROR
+        //     props.id//chist e
+        //     props.title//chist e
+        // }
+        // const content = posts.map((post) =>
+        //     <Post
+        //         key={post.id}
+        //         id={post.id}
+        //         title={post.title} />
+        // );
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        /*********************** JSX allows embedding any expression (cikl fral anmijapes jsx-i mej) ************************ */
+
+            /*tnayin brigad*/
+  
+
+
+    </script>
+</body>
+
+</html>

@@ -48,7 +48,10 @@
                 this.setState(state => ({
                     show: !state.show
                 }));
+             
             }
+
+         
 
             render() {
                 return (
@@ -56,6 +59,7 @@
                         <WarningBanner warn={this.state.show} />
                         <button onClick={this.handleToggleClick}>
                             {this.state.show ? 'Hide' : 'Show'}
+                            
                         </button>
                     </div>
                 );
