@@ -93,6 +93,27 @@
 
         /************* Conditional Rendering with && vs if *************/
 
+        //#prmmitive exampole of conditional rendering
+        //* variant 1
+        // function Greeting(props) {
+        //     const isLoggedIn = props.isLoggedIn;
+        //     if (isLoggedIn) {
+        //         return <UserGreeting />;
+        //     }
+        //     return <GuestGreeting />;
+        // }
+
+        // ReactDOM.render(
+        //     // Try changing to isLoggedIn={true}:
+        //     <Greeting isLoggedIn={false} />,
+        //     document.getElementById('root')
+        // );
+
+
+
+
+
+
         //#example 1 - with if
         // function Mailbox(props) {
         //     const unreadMessages = props.unreadMessages;
@@ -111,26 +132,28 @@
 
 
 
-        //#example 1 - with and(&&) operator - erb vor paymany mek hate  e uremn naxytreli e ogtagorcel && operatory
-        function Mailbox(props) {
-            const unreadMessages = props.unreadMessages;
-            return (
-                <div>
-                    <h1>Hello!</h1>
-                    {unreadMessages.length > 0 &&
-                        <h2>
-                            You have {unreadMessages.length} unread messages.
-                            </h2>
-                    }
-                </div>
-            );
-        }
 
-        const messages = ['React'];
-        ReactDOM.render(
-            <Mailbox unreadMessages={messages} />,
-            document.getElementById('root')
-        );
+
+        //#example 1 - with and(&&) operator - erb vor paymany mek hate  e uremn naxytreli e ogtagorcel && operatory
+        // function Mailbox(props) {
+        //     const unreadMessages = props.unreadMessages;
+        //     return (
+        //         <div>
+        //             <h1>Hello!</h1>
+        //             {unreadMessages.length > 0 &&
+        //                 <h2>
+        //                     You have {unreadMessages.length} unread messages.
+        //                     </h2>
+        //             }
+        //         </div>
+        //     );
+        // }
+
+        // const messages = ['React'];
+        // ReactDOM.render(
+        //     <Mailbox unreadMessages={messages} />,
+        //     document.getElementById('root')
+        // );
 
 
 
