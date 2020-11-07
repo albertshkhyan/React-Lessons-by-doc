@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div id="root"> </div>
+
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.25.0/babel.min.js"></script>
+    <script type="text/babel">
+
+
+
+        class Chess extends React.Component {
+            constructor(props) {
+                super(props);
+
+            }
+
+
+
+
+            render() {
+                let count = 0;
+
+                return (<table border="1" width="500" height="500">
+                    for(var i = 0; i <= 7; i++) {
+                        <tr>
+                            for(var j = 0; j <= 7; j++) {
+                    if((i + j)%2){
+                                <td bgcolor="black"> + count++ +</td>
+                            }
+                    else {
+                                <td> + count++ + </td>
+
+                            }
+                };
+                    </tr>
+                    }
+                </table>
+                );
+
+            }
+        }
+
+        ReactDOM.render(
+            <Chess />,
+            document.getElementById('root')
+        );
+
+    </script>
+
+</body>
+
+</html>
