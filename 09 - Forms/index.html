@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="root"> </div>
+
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.25.0/babel.min.js"></script>
+
+    <script type="text/babel">
+        //
+        /****************** Forms *******************/
+
+        /*
+        inche state-y ? - da mer biznes logikan e.
+
+        * form tegy uni ira nerqin state-y.
+        Example
+        */
+
+        // class Form extends React.Component {
+        //     render() {
+        //         return (
+        //             <div>
+        //                 <form>
+        //                     <label>
+        //                         Name:
+        //                     <input type="text" name="name" />
+        //                     </label>
+        //                     <button type="submit">Submit</button>
+        //                 </form>
+        //                 {/*  <input type="submit" value="Submit" /> */}
+
+        //             </div>
+        //         )
+        //     }
+        // }
+
+        // const App = (props) => {
+        //     return (
+        //         <Form />
+        //     )
+        // }
+
+        // ReactDOM.render(
+        //     <App />,
+        //     document.querySelector('#root')
+        // );
+
+
+
+        /************************** Controlled Components *****************************/
+
+        /*
+            form, input, select, textarea  - xelaci teg (xelaci e vorvhetev uni ira nerqin state)
+            karavarvox elementner ev karavarvox componentner
+
+            vorpeszi elementy (orinak input-y) darna karavavox iran peqa tal value atributy ev ayd valus petqa poxel setState-i mijocov.
+                erv  vor input talis value ira arjeqy chi linum poxel, bayc inqy darnuma e karavarvox.
+        */
+
+        class Form extends React.Component {
+            //vorpesz value poxenq petqa ogtagorceqn state, aysinq input-i vlaue-n petqa pahvi state-i mej
+
+            /*THIS REMIND
+            * this === Form
+                this- mishty petqa grvi funkciayi me
+                constructor(props) {
+                    super(props)
+                    this.state = {}
+                }
+
+                ---------------- Event --------------------
+               eventin misht petqa veragrel  event handler (funkciya)
+
+               inch argument e poxasncum react event handler-in kachelic ? 
+                Event obyekty
+            
+            */
+            //karavarvox komponenty - da erv vor user-i mutqagrac arjeqnery sinxronizacia e linum mer konkret komponenti mej
+            state = {
+                nameValue: "hello"
+            }
+
+            //user - mutqatgrelu hanravorutyun talis enq setState-i mijocov
+
+            changeValue = (e) => {
+                // console.log('e.target.value', e.target.value);//sxa user mutqagrac arjeqna
+                //ays funkcian kanchvum e erb vor user-y inch vor simvol e mutqagrum
+                e.persist();
+
+
+                //exampple 1
+                //setState - in kareli poxancel kam obyekt kam funkcia
+                this.setState(() => {
+                    // console.log('e.target', e.target);
+                    return { nameValue: e.target.value }
+                })
+
+                //exampple 2
+
+                // this.setState({
+                //     nameValue: e.target.value
+                // });
+
+            }
+
+            render() {
+                // this.state//chist e
+                // state//sxal e
+
+                return (
+                    <div>
+                        <form>
+                            <label>
+                                Name:
+                           {/* <input type="text" name="name" onChange={() => changeValue()} value={this.state.nameValue} />*/}
+                                <input type="text" name="name" onChange={this.changeValue} value={this.state.nameValue} />
+                            </label>
+                            <button type="submit">Submit</button>
+                        </form>
+                        {/*  <input type="submit" value="Submit" /> */}
+
+                    </div>
+                )
+            }
+        }
+
+        const App = (props) => {
+            return (
+                <Form />
+            )
+        }
+
+        ReactDOM.render(
+            <App />,
+            document.querySelector('#root')
+        );
+
+    </script>
+</body>
+
+</html>
