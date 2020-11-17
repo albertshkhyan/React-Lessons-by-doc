@@ -87,7 +87,7 @@
             */
             //karavarvox komponenty - da erv vor user-i mutqagrac arjeqnery sinxronizacia e linum mer konkret komponenti mej
             state = {
-                nameValue: "hello"
+                value: "Vigen"
             }
 
             //user - mutqatgrelu hanravorutyun talis enq setState-i mijocov
@@ -113,6 +113,8 @@
 
             }
 
+
+
             render() {
                 // this.state//chist e
                 // state//sxal e
@@ -123,7 +125,7 @@
                             <label>
                                 Name:
                            {/* <input type="text" name="name" onChange={() => changeValue()} value={this.state.nameValue} />*/}
-                                <input type="text" name="name" onChange={this.changeValue} value={this.state.nameValue} />
+                                <input type="text" onChange={this.changeValue} value={this.state.value} />
                             </label>
                             <button type="submit">Submit</button>
                         </form>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="root"> </div>
+
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.25.0/babel.min.js"></script>
+
+    <script type="text/babel">
+        //
+        /***************************textarea***************************/
+        //#ays tegy karavaroc e darnum nuypes inchpes input-y
+
+
+        //* tnayin- textarea-n sarqel karavorox teg
+        // const App = () => {
+        //     return (
+        //         <textarea>
+        //             Hello there, this is some text in a text area
+        //         </textarea>
+        //     )
+        // }
+
+        // ReactDOM.render(
+        //     <App />,
+        //     document.querySelector('#root')
+        // );
+
+
+
+
+        /***************************The select Tag***********************/
+        //selct-y nuynpes uni ira nerqin stata
+        // const App = () => {
+        //     //funtinal komponenteri jamanak this banali bary chi ogtagorcvum
+        //     const handleChange = (e) => {
+        //         // console.log('e', e);
+        //         console.log('e.target.value', e.target.value);
+        //     }
+
+
+        //     return (
+        //         // <select>
+        //         //     <option value="lime">Vigen</option>
+        //         //     <option value="grapefruit">Alik</option>
+        //         //     <option selected value="coconut">Armen</option>
+        //         // </select>
+
+
+        //         <select onChange={handleChange}>
+        //             <option value="RU">RU</option>
+        //             <option value="AM">AM</option>
+        //             <option selected value="EN">EN</option>
+        //         </select>
+        //     )
+        // }
+
+        // /* #vonc karelia selcted tegy dardznel karavarvox
+
+        // */
+
+
+        // ReactDOM.render(
+        //     <App />,
+        //     document.querySelector('#root')
+        // );
+
+
+
+        /**************** input file ****************/
+
+
+        // const App = () => {
+
+
+        //     return (
+        //         <input type="file" />
+        //     )
+
+        // }
+
+
+        // ReactDOM.render(
+        //     <App />,
+        //     document.querySelector('#root')
+        // );
+
+
+        /********** Controlled Input Null Value *********/
+
+        //erb vor value- null kam undefined e darnum ankaravareli teg
+        const App = () => {
+
+
+            return (
+                <input value={null} />
+            )
+
+        }
+
+
+        ReactDOM.render(
+            <App />,
+            document.querySelector('#root')
+        );
+
+    </script>
+</body>
+
+</html>

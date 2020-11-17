@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <title></title>
+    <style>
+        .warning {
+            background: rgba(129, 91, 20, 0.514);
+            width: max-content;
+            font-size: 30px;
+        }
+
+        .warning-img {
+            width: 30px;
+        }
+
+        /*Warning styles**/
+
+        .warning {
+            transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+            box-shadow: none;
+            display: flex;
+            padding: 6px 16px;
+            font-size: 0.875rem;
+            font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+            font-weight: 400;
+            line-height: 1.43;
+            border-radius: 4px;
+            letter-spacing: 0.01071em;
+            color: rgb(102, 60, 0);
+            background-color: rgb(255, 244, 229);
+            margin-top: 16px;
+        }
+
+        .MuiAlert-icon {
+            font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+            font-weight: 400;
+            line-height: 1.43;
+            letter-spacing: 0.01071em;
+            display: flex;
+            opacity: 0.9;
+            padding: 7px 0;
+            font-size: 22px;
+            margin-right: 12px;
+            color: #ff9800;
+        }
+
+        .MuiSvgIcon-root {
+            font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+            font-weight: 400;
+            line-height: 1.43;
+            letter-spacing: 0.01071em;
+            color: #ff9800;
+            fill: currentColor;
+            width: 1em;
+            height: 1em;
+            display: inline-block;
+            transition: fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+            flex-shrink: 0;
+            user-select: none;
+            font-size: inherit;
+        }
+
+        .MuiTypography-root {
+            color: rgb(102, 60, 0);
+            margin: 0;
+            font-size: 1rem;
+            font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+            line-height: 1.5;
+            letter-spacing: 0.00938em;
+            margin-bottom: 0.35em;
+            margin-top: -2px;
+            font-weight: 500;
+        }
+
+        /* .MuiAlertTitle-root {
+    margin-top: -2px;
+    font-weight: 1500;
+} */
+        .MuiAlert-message {
+            font-size: 0.875rem;
+            font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+            font-weight: 400;
+            line-height: 1.43;
+            letter-spacing: 0.01071em;
+            color: rgb(102, 60, 0);
+            padding: 8px 0;
+        }
+
+        /*Button styles**/
+        html {
+            box-sizing: border-box;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: inherit;
+        }
+
+        .MuiButtonBase-root {
+            color: inherit;
+            border: 0;
+            cursor: pointer;
+            margin: 0;
+            display: inline-flex;
+            outline: 0;
+            padding: 0;
+            position: relative;
+            align-items: center;
+            border-radius: 0;
+            vertical-align: middle;
+            -moz-appearance: none;
+            -ms-user-select: none;
+            justify-content: center;
+            text-decoration: none;
+            background-color: transparent;
+            -webkit-appearance: none;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .MuiButton-root {
+            color: rgba(0, 0, 0, 0.87);
+            padding: 6px 16px;
+            font-size: 0.87rem;
+            min-width: 64px;
+            box-sizing: border-box;
+            transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, border 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+            font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+            font-weight: 500;
+            line-height: 1.75;
+            border-radius: 4px;
+            letter-spacing: 0.02em;
+            text-transform: uppercase;
+        }
+
+        .MuiButton-contained {
+            color: rgba(0, 0, 0, 0.87);
+            box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
+            background-color: #e0e0e0;
+        }
+
+        .MuiButton-containedPrimary {
+            color: #fff;
+            background-color: #1976d2;
+        }
+
+        .jss61>* {
+            margin: 8px;
+        }
+
+        .jss53 {
+            margin: auto;
+            display: flex;
+            outline: 0;
+            position: relative;
+            justify-content: center;
+        }
+
+        .jss53 {
+            border-radius: 4px;
+        }
+
+        .jss52 {
+            margin-left: -16px;
+            margin-right: -16px;
+            margin-bottom: 40px;
+        }
+
+        .jss52 {
+            padding: 0px 8px;
+            margin-left: 0px;
+            margin-right: 0px;
+        }
+
+        .MuiContainer-root {
+            width: 100%;
+            display: block;
+            box-sizing: border-box;
+            margin-left: auto;
+            margin-right: auto;
+            padding-left: 16px;
+            padding-right: 16px;
+        }
+
+        .MuiContainer-root {
+            padding-left: 24px;
+            padding-right: 24px;
+        }
+
+        .MuiContainer-maxWidthMd {
+            max-width: 960px;
+        }
+
+        .jss2 {
+            position: relative;
+        }
+
+        #main-content {
+            outline: 0;
+        }
+
+        .jss1 {
+            width: 100%;
+        }
+
+        .jss5 {
+            width: calc(-175px + 100%);
+        }
+
+        .jss5 {
+            width: calc(-415px + 100%);
+        }
+
+        .jss9 {
+            display: flex;
+            background-color: #fff;
+        }
+
+        body {
+            color: rgba(0, 0, 0, 0.87);
+            margin: 0;
+            font-size: 0.87rem;
+            font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+            font-weight: 400;
+            line-height: 1.43;
+            letter-spacing: 0.01em;
+            background-color: #fff;
+        }
+
+        .MuiButton-label {
+            width: 100%;
+            display: inherit;
+            align-items: inherit;
+            justify-content: inherit;
+        }
+
+        .MuiTouchRipple-root {
+            top: 0px;
+            left: 0px;
+            right: 0px;
+            bottom: 0px;
+            z-index: 0;
+            overflow: hidden;
+            position: absolute;
+            border-radius: inherit;
+            pointer-events: none;
+        }
+    </style>
+
+
+    <div id="root"> </div>
+
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.25.0/babel.min.js"></script>
+    <script type="text/babel">
+
+        function WarningBanner(props) {
+            if (!props.warn) {
+                return null;
+            }
+
+            return (
+                <div className="warning">
+                    <div class="jss53 jss54" id="demo-0dxio8tyfucn">
+                        <div class="jss61">
+                            <div class="MuiPaper-root MuiAlert-root MuiAlert-standardWarning MuiPaper-elevation0"
+                                role="alert">
+                                <div className="MuiAlert-icon"><svg xmlns="http://www.w3.org/2000/svg"
+                                    className="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit" aria-hidden="true"
+                                    viewBox="0 0 24 24" focusable="false">
+                                    <path
+                                        d="M 12 5.99 L 19.53 19 H 4.47 L 12 5.99 M 12 2 L 1 21 h 22 L 12 2 Z m 1 14 h -2 v 2 h 2 v -2 Z m 0 -6 h -2 v 4 h 2 v -4 Z" />
+                                </svg></div>
+                                <div className="MuiAlert-message">
+                                    <div className="MuiTypography-root MuiAlertTitle-root MuiTypography-body1 MuiTypography-gutterBottom"><strong>Warning</strong></div>
+                                This is a warning alert — <strong>check it out!</strong>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            );
+        }
+
+
+        function Button(props) {
+
+            return (
+                <div id="__next" onClick={props.whenOnClick}>
+                    <div className="jss9">
+                        <div className="jss1 jss4 jss5">
+                            <main tabIndex={-1} className="MuiContainer-root jss50 jss2 MuiContainer-maxWidthMd" id="main-content">
+                                <div className="jss52">
+                                    <div className="jss53 jss54" id="demo-q2sms4t3x79">
+                                        <div className="jss61"><button tabIndex={0} className="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary" type="button"><span className="MuiButton-label">Primary</span><span className="MuiTouchRipple-root" /></button></div>
+                                    </div>
+                                </div>
+                            </main>
+                        </div>
+                    </div>
+                </div>
+            )
+        }
+
+
+
+        class Page extends React.Component {
+            constructor(props) {
+                super(props);
+                this.state = { show: true };
+            }
+
+            handleToggleClick = () => {
+                this.setState(state => ({
+                    show: !state.show
+                }));
+            }
+
+
+            render() {
+
+                return (
+
+                    <div>
+                        <WarningBanner warn={this.state.show} />
+
+                        <Button variant="contained" color="primary" whenOnClick={this.handleToggleClick}>
+                            {this.state.show ? 'Hide' : 'Show'}
+                        </Button>
+
+                    </div>
+                );
+            }
+        }
+
+        ReactDOM.render(
+            <Page />,
+            document.getElementById('root')
+        );
+
+    </script>
+
+    </body>
+
+</html>
