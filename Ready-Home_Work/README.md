@@ -17,7 +17,7 @@ list and keys
     &&
     if
     ?
- * jsx-um voncen cikl frum
+ * jsx-um voncen cikl frum666 
     map-ov
 
  * inchi hamar enq cikl fraluc amen elementin talis key attributy
@@ -100,5 +100,69 @@ list and keys
 
 
 --------------------------- Lesson 1 -------------------
+
+* Summary
+   * Forms
+      * inchi hamar e label teg-y ? -  bari vra click aneluc heto input fokusirovka lini
+
+      * inch kcucadrivi ekranin ?
+         <select>
+          <option value="grapefruit">Grapefruit</option>
+          <option value="lime">Lime</option>
+          <option value="coconut">Coconut</option>
+          <option slected value="mango">Mango</option>
+         </select>
+
+         * vortex karox e petqa gal select tag-y
+            https://mimobike.com/en
+         * Vortex karox e petqa gal textarea tegy
+            https://kinokrad.co/345848-koshki-protiv-sobak-3-lapy-obedinyaytes.html
+
+            * ete uzmum enq arajin hertin cucadrvi Mongo-n inch petqa anel ?
+
+      * vor tegy petqa ogtagorcenq vorpeszi ystananq hetvyal tesqy - https://i.imgur.com/knmUxY8.png.
+      * inchi hamar e ogtagorcvum file tegy ?
+
+      * Iche js-um (es6-um)  computed property name - da erb vor key qarakusi pakagceri mej e (vorpeszi key-lini dinamik)
+         https://www.google.com/search?q=computed+property+name&rlz=1C1GCEA_enAM854AM854&sxsrf=ALeKk00hmQnJbSQfoSWq8fIF0yZxZmW6Mw:1606236150325&source=lnms&tbm=isch&sa=X&ved=2ahUKEwjFian5z5vtAhUCjosKHRTJDUwQ_AUoAXoECAUQAw&biw=1517&bih=705#imgrc=N4Lm-HxzqYEFiM
+      
+      * control and uncotrol tags (components)
+         * vorpeszi tegy lini karavarvox ayn pardadir petqa lini form tegi mej ?
+            * https://d33wubrfki0l68.cloudfront.net/943efcba371cf87a8170b3c49370124d055a5b97/557fa/assets/images/controlled-vs-uncontrolled-cover.png
+
+            WHEN NEED CONTROL COMPONENT
+               https://miro.medium.com/max/656/1*qya0oJOdM8nQ0IKJsv7XbQ.gif
+
+---------------------
+
+# home work
 tnayin 1 - https://i.imgur.com/kYOhoZB.png
 tnayin 2 - https://i.imgur.com/OPtOqc3.png - stexcel hetvyal artaqin tesqy
+
+https://codepen.io/ungkunazmi/pen/YzWOedb
+
+#  Handling Multiple Inputs
+   * https://www.google.com/search?q=control+components+react&tbm=isch&ved=2ahUKEwiRk4GB0JvtAhVYLxoKHTdfCToQ2-cCegQIABAA&oq=control+components+react&gs_lcp=CgNpbWcQARgAMgQIABAYOgQIIxAnOgQIABBDOgIIADoFCAAQsQM6BAgAEB46BAgAEBM6CAgAEAUQHhATOgYIABAFEB46BggAEAgQHlDi7Q1Y0K0OYJCvDmgBcAB4AIAB7gGIAa8WkgEGMC4yMS4xmAEAoAEBqgELZ3dzLXdpei1pbWfAAQE&sclient=img&ei=Bji9X5H4GtjeaLe-pdAD&bih=705&biw=1517&rlz=1C1GCEA_enAM854AM854#imgrc=7rQXGLONsQH6IM
+
+     * We will use formik with - codesandbox, but first use withour lib.
+      Fully-Fledged Solutions
+         Formik, redux-forms, react-hook-forms
+# SET_STATE MERGE - setState() automatically merges merges a partial state into the current state.
+   * how work merge
+      https://www.google.com/search?q=setState()+automatically+merges&rlz=1C1GCEA_enAM854AM854&sxsrf=ALeKk00fB3nZ-A2hIqlx-p2DU466c_KCCw:1606236261143&source=lnms&tbm=isch&sa=X&ved=2ahUKEwiN55Su0JvtAhWMzaQKHQinCIgQ_AUoAnoECAgQBA&biw=1517&bih=705#imgrc=egqRbfddAcgc8M
+
+
+
+
+
+
+
+
+
+
+
+
+      ------------------ Lesson 2 ------------------
+
+
+      home work 1- ystanal hetvyal ardyunqy - https://miro.medium.com/max/656/1*qya0oJOdM8nQ0IKJsv7XbQ.gif

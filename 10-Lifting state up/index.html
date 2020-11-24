@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="root"> </div>
+
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.25.0/babel.min.js"></script>
+
+    <script type="text/babel">
+        //
+  
+
+        //# EXAMPLE WHEN NEED - LIFING STATE UP
+        class Counter1 extends React.Component {
+            state = {
+                count: 0
+            }
+
+            handleCounter = () => {
+                this.setState({
+                    count: this.state.count + 1
+                })
+            }
+            render() {
+                return (
+                    <div>
+                        <h2>{this.state.count}</h2>
+                        <button onClick={this.handleCounter}>Counter 1</button>
+                    </div>
+                )
+            }
+        }
+        class Counter2 extends React.Component {
+            state = {
+                count: 0
+            }
+            render() {
+                return (
+                    <div>
+                        <h2>{this.state.count}</h2>
+                        <button>Counter 2</button>
+                    </div>
+                )
+            }
+        }
+        class App extends React.Component {
+
+            render() {
+                return (
+                    <div>
+                        <Counter1 />
+                        <Counter2 />
+                    </div>
+                )
+            }
+        }
+
+        ReactDOM.render(
+            <App />,
+            document.querySelector('#root')
+        )
+
+              /*
+        LIFING STATE UP - EXAMPLES
+        *https://codesandbox.io/s/vlx300203?from-embed=&file=/src/index.js
+        * simple example of calc - https://codesandbox.io/s/l283p633pq?from-embed=&file=/src/Calculator.js
+        
+        */
+
+    </script>
+</body>
+
+</html>

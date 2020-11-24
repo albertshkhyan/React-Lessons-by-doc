@@ -96,56 +96,25 @@
         class Form extends React.Component {
 
 
-            //# ays funkcian ashxatuma amen angam erv user mutqagrum e inch-vor simvol, mezi petqa vor verjum havaqenq bolor inputenri value-nery
-            // changeValue = (e) => {
-            // e.target - input 
-            //     console.log('e.target.value', e.target.value);
-            //     e.persist();
-            //     this.setState(() => {
-            //         return { nameValue: e.target.value }
-            //     })
-            // }
-
-            handleSubmit = (e) => {
-                //event.target-y cuyca e talis ayn tegy vori vra tvyal event handler-y drvace
-                e.preventDefault()
-                console.log("on submit work");
-                // console.log('e.target - ', e.target);//form
-                // console.log('e.target.username - ', e.target.username);// <input name="username" type="text" placeholder="Username" />
-                // console.log('e.target.password - ', e.target.password);// <input name="username" type="text" placeholder="Username" />
-                // console.log('Login - ', e.target.username.value);
-                // console.log('Password - ', e.target.password.value);
-
-                const data = {
-                    username: e.target.username.value,
-                    password: e.target.password.value,
-                }
-                console.log('data', data);
-
-                /*asy nuyn orinaky irakan pryektnerum arvum gradarannerov  , drancic en`
-                    1. redux-forms, 
-                    2. Formik, 
-                    3. react-hook-forms
-                
-
-                */
-
+            changeValue = (e) => {
+                e.persist();
+                this.setState(() => {
+                    return { nameValue: e.target.value }
+                })
             }
 
             render() {
 
                 return (
                     <div className="flex-container">
-                        <form onSubmit={this.handleSubmit} className="formContainer">
+                        <form className="formContainer">
                             <div className="log">Log in</div>
                             <label>
-                                {/*<input onChange={this.changeValue} type="text" placeholder="Username" />*/}
-                                <input name="username" type="text" placeholder="Username" />
+                                <input type="text" placeholder="Username" />
                             </label>
                             <br />
                             <label>
-                                {/*<input onChange={this.changeValue} type="password" placeholder="Password" />*/}
-                                <input name="password" type="password" placeholder="Password" />
+                                <input type="text" placeholder="Password" />
                             </label>
                             <br />
                             <button type="submit">Log in</button>
