@@ -1,5 +1,5 @@
 
-#lesson 3
+# lesson 3
 
    * nenc anel vor input-i dahstery linen sinxron.
       lracucich - sarqel disabled
