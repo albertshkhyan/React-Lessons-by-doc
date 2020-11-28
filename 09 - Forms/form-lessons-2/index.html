@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="root"> </div>
+
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.25.0/babel.min.js"></script>
+
+    <script type="text/babel">
+
+        //sholwo copy
+        let testObj1 = {
+            username: "",
+            passw: ""
+        }
+
+        const copy_testObj1 = {
+            ...testObj1
+        }
+        console.log('copy_testObj1', copy_testObj1);
+
+        copy_testObj1.passw = "1234"
+        console.log('copy_testObj1', copy_testObj1);
+        console.log('testObj1', testObj1);
+
+        //
+            /****************** merges a partial state into the current state ******************/
+
+                class App extends React.Component  {
+                        state = {
+                            username: "",
+                            passw: ""
+                        }
+
+                        handlePassword = (e) => {
+                            //voncen state enq state poxum u vonca asxastum ayn
+                            /* 2 dzevov karelia state poxel -state-in vorpes arggument 
+                                1.this.setState({username: "hello"})
+                                2.this.setState(() => {//setState-in poxancum enq vorpes argument functia erb vor mez petqa naxord state-y
+                                    return { username: "hello" }
+                                })
+                            
+                            */
+                           //# 1 merge state
+                            this.setState({ username: "hello"})
+                            //# previoous staet
+                            // this.setState((prevSate) => {
+                            //     console.log('prevSate', prevSate);
+                            //     return { passw: "hello" }
+                            // })
+
+                            //# dinamik key
+                            // let name = "valodik"
+                            // this.setState({
+                            //     [name]: value//valod: value
+                            // });
+                        }
+                        render() {
+                               return (
+                                <div>
+                                    <input value={this.state.username} type="text" />
+                                    <input value={this.state.passw} onChange={this.handlePassword} type="password" />
+                                </div>
+                            )
+                        }
+                    }
+
+                    ReactDOM.render(
+                        <App />,
+                        document.querySelector('#root')
+                    )
+
+
+        /****************** Controlled Input Null Value ******************/
+
+        /*
+        <input value={null} /> ❌ 
+        <input value={undefined} /> ❌ 
+                    
+                    
+            *
+        */
+        // const App = () => {
+        //     state = {
+        //         value: ""//✅
+        //         //value: null❌ 
+        //     }
+        //     return (
+        //         <div>
+        //             <input value={this.state.value} />
+
+        //         </div>
+        //     )
+        // }
+
+        // ReactDOM.render(
+        //     <App />,
+        //     document.querySelector('#root')
+        // )
+
+    </script>
+</body>
+
+</html>

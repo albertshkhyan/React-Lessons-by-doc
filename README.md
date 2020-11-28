@@ -1,3 +1,9 @@
+---
+noteId: "5a9152d02e8a11eb96442344981061b0"
+tags: []
+
+---
+
 
 ------------------ lesson 9 -----------------------
 # aranc nayelu lucel documentaciayi xndirnery (conditonal rendering)
@@ -94,11 +100,57 @@ list and keys
 
 
 
-
-
-
-
-
 --------------------------- Lesson 1 -------------------
-tnayin 1 - https://i.imgur.com/kYOhoZB.png
-tnayin 2 - https://i.imgur.com/OPtOqc3.png - stexcel hetvyal artaqin tesqy
+# Home Work
+ * Task 1 - https://i.imgur.com/VbhpKmU.png - JSON.stringify() 
+ * Task 2 - 
+   * https://regexr.com/3e48o  - email validation
+* Task 3 - https://i.imgur.com/wc7vaiq.png
+
+
+
+--------------------------- Lesson 2 -------------------
+
+* ichpes kanxargelel brauzeri koxmic drvac eventy ? - Event.preventDefault()
+
+* inche handling multiple inputs ev vortex e petq galis ? - da erb vor karavarum enq mi qani input miangamic.
+
+* inch sayt giteq vortex react-i padrasti mijavayr e sarqac ? - https://codesandbox.io/
+
+* inchi hamar e form tegy ? - vorpeszi serverin tvyal uxarkenq. 
+   - tegy kam componenty kara lini karavarvox aranc from tegi mej gtnvelu ?
+
+* vorpeszi handl anenq mi qani inputneri dashtery iranc inch petqa tanq ? - amen mi inputin petqa tanq name atributy (voprpeszi handling mulitple inputsy ashtati amen elementin (input) petqa tanq name atributy)
+
+
+* bolor inputneri harjeqnery  miangamic havaqelu hamar inch event en ogtagorcum ? - onSubmit
+
+ ⚠ onChange miayn mi input e havarqum.
+ 
+
+* <form onSubmit={this.handlSubmit}>
+handleSubmit(e) {
+   e.target <- inch kcucadri e.target-y - e.target === form
+}
+e.target - cuyca talis ayn tegy vori vra drvac e iradarzutyuny
+
+Vorpeszi multiple handling inputs -y astaxti talis enq erku ban
+   1. form tegin talis enq onSubmit evnety
+   2. form mej gtnvwx tegerin (inputnerin) talis inch name.
+
+* inch gradaranner gideq vory naxatesvac e handling multiple inputs anelu hamar ?
+   formik
+   redux-form
+   react-hook-form
+
+
+
+
+
+
+   ----------------lesson 3-------------------
+
+   * nenc anel vor input-i dahstery linen sinxron.
+      lracucich - sarqel disabled
+
+   * home work - template with material ui - https://material-ui.com/getting-started/templates/sign-in/
