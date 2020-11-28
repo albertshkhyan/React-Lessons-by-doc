@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            /* box-sizing: border-box; */
+        }
+        
+form {
+  width:300px;
+  height: 240px; 
+  border: 3px solid #f1f1f1;
+  background-color: rgba(233, 230, 230, 0.24);
+}
+
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+button {
+  background-color: #007BFF;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+.log {
+    text-align: center;
+    font-weight: b;
+
+}
+
+span.psw {
+  float: right;
+}
+.cna {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15px;
+}
+.formContainer{
+    padding: 20px;
+}
+
+.flex-container{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+    </style>
+
+</head>
+
+<body>
+    <div id="root"> </div>
+
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.25.0/babel.min.js"></script>
+    <script type="text/babel">
+
+
+
+        class Form extends React.Component {
+
+
+            changeValue = (e) => {
+                e.persist();
+                this.setState(() => {
+                    return { nameValue: e.target.value }
+                })
+            }
+
+            render() {
+
+                return (
+                    <div className= "flex-container">
+                        <form className= "formContainer">
+                            <div className="log">Log in</div>
+                            <label>
+                                <input type="text" placeholder="Username" />
+                            </label>
+                            <br />
+                            <label>
+                                <input type="text" placeholder="Password" />
+                            </label>
+                            <br />
+                            <button type="submit">Log in</button>
+                            <br />
+                            <label>
+                                <input type="checkbox" checked="" name="remember" />
+                                Remember me	
+                                <span className="psw"><a href="#">Forgot password? </a></span>
+                            </label>
+                            <div className="cna">
+                                <span><a href="#">Create an Acount</a></span>
+                            </div>
+
+                        </form>
+                    </div>
+                )
+            }
+        }
+
+        const App = (props) => {
+            return (
+                <Form />
+            )
+        }
+
+        ReactDOM.render(
+            <App />,
+            document.querySelector('#root')
+        );
+
+    </script>
+
+</html>

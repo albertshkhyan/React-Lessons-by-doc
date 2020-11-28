@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="root"> </div>
+
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.25.0/babel.min.js"></script>
+
+    <script type="text/babel">
+
+        /************* Conditional Rendering with if else-if, else *************/
+
+        //# Conditional Rendering - Example 1
+        // function UserGreeting(props) {
+        //     return <h1>Welcome back!</h1>;
+        // }
+
+        // function GuestGreeting(props) {
+        //     return <h1>Please sign up.</h1>;
+        // }
+
+
+        // function Greeting(props) {
+        //     //sa kochvum e paymanakan rendering
+        //     const isLoggedIn = props.isLoggedIn;
+        //     let greeting;//
+        //     if (isLoggedIn) {
+        //         greeting = <UserGreeting />
+        //     }
+        //     else {
+        //         greeting = <GuestGreeting />
+        //     }
+
+
+        //     return greeting;
+        // }
+
+
+        // class LoginController extends React.Component {
+        //     state = { isToggleOn: false }
+        //     clickHandler = (e, myid) => {
+        //         //#example1
+        //         //event handler functian duq erbeq cheq kanchum
+        //         // if (this.state.isToggleOn === false) {
+        //         //     this.setState({ isToggleOn: true });
+        //         // }
+        //         // else {
+        //         //     this.setState({ isToggleOn: false });
+        //         // }
+
+        //         //#example2
+        //         this.setState({ isToggleOn: !this.state.isToggleOn });
+
+        //     }
+        //     render() {
+        //         const id = "138";
+        //         let button;
+        //         if (this.state.isToggleOn) {
+        //             //ay greladzevov  karelia mi qani argument poxancel - (e) => this.clickHandler(e, id)
+        //             button = <button onClick={(e) => this.clickHandler(e, id)}>Logout</button>
+        //         }
+        //         else {
+        //             button = <button onClick={this.clickHandler}>Login</button>
+        //         }
+
+
+        //         return (
+        //             <div>
+        //                 <Greeting isLoggedIn={this.state.isToggleOn} />
+        //                 { button}
+        //             </div>
+        //         )
+        //     }
+        // }
+
+        // ReactDOM.render(
+        //     // Try changing to isLoggedIn={true}:
+
+        //     <LoginController />,
+        //     document.getElementById('root')
+        // )
+
+
+
+        /************* Conditional Rendering with && vs if *************/
+
+        //#prmmitive exampole of conditional rendering
+        //* variant 1
+        // function Greeting(props) {
+        //     const isLoggedIn = props.isLoggedIn;
+        //     if (isLoggedIn) {
+        //         return <UserGreeting />;
+        //     }
+        //     return <GuestGreeting />;
+        // }
+
+        // ReactDOM.render(
+        //     // Try changing to isLoggedIn={true}:
+        //     <Greeting isLoggedIn={false} />,
+        //     document.getElementById('root')
+        // );
+
+
+
+
+
+
+        //#example 1 - with if
+        // function Mailbox(props) {
+        //     const unreadMessages = props.unreadMessages;
+
+        //     let message;
+        //     if (unreadMessages.length > 0) {
+        //         message = <h2>You have {unreadMessages.length} unread messages.</h2>
+        //     }
+        //     return (
+        //         <div>
+        //             <h1>Hello!</h1>
+        //             {message}
+        //         </div>
+        //     );
+        // }
+
+
+
+
+
+        //#example 1 - with and(&&) operator - erb vor paymany mek hate  e uremn naxytreli e ogtagorcel && operatory
+        // function Mailbox(props) {
+        //     const unreadMessages = props.unreadMessages;
+        //     return (
+        //         <div>
+        //             <h1>Hello!</h1>
+        //             {unreadMessages.length > 0 &&
+        //                 <h2>
+        //                     You have {unreadMessages.length} unread messages.
+        //                     </h2>
+        //             }
+        //         </div>
+        //     );
+        // }
+
+        // const messages = ['React'];
+        // ReactDOM.render(
+        //     <Mailbox unreadMessages={messages} />,
+        //     document.getElementById('root')
+        // );
+
+
+
+
+        /************* Conditional Rendering -  Inline If-Else with Conditional Operator *************/
+
+        /*
+            Ete menq ogtagrocum enq if ev else, dra poxaren karanq ogtagorcenq harcakani paymany.
+            render() {
+            const isLoggedIn = this.state.isLoggedIn;
+            return (
+                <div>
+                The user is <b>{isLoggedIn ? 'currently' : 'not'}</b> logged in.
+                </div>
+            );
+            }
+        */
+
+
+
+
+        /******** Preventing Component from Rendering  ********/
+
+        /*
+            Menq karox enq nayev render  chanel - kam cucadrel komponenty (jsx) kam vochmiban.
+        */
+    </script>
+</body>
+
+</html>

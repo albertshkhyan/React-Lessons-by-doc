@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="root"> </div>
+
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.25.0/babel.min.js"></script>
+
+    <script type="text/babel">
+        //
+        /*Handling Events
+        <button onClick={(e) => this.deleteRow(id, e)}>Delete Row</button>
+        <button onClick={this.deleteRow.bind(this, id)}>Delete Row</button>
+        
+        */
+
+        //hos pass argument to event handler
+
+        class Table extends React.Component {
+            state = {
+                users: [
+                    { id: 1, name: "Vigen", email: "Vigen@mail.ru" },
+                    { id: 2, name: "Armen", email: "Armen@mail.ru" },
+                    { id: 3, name: "Alik", email: "Alik@mail.ru" },
+                    { id: 4, name: "Artur", email: "art@mail.ru" },
+                ]
+            }
+            deleteRow = (id, e) => {
+
+                let copyState = this.state.users;
+                let newUsers = copyState.filter((user) => {
+                    return user.id !== id
+                });
+                console.log('newUsers', newUsers);
+                this.setState({ users: newUsers });
+            }
+
+            render() {
+
+                return (
+                    <React.Fragment>
+                        <h2>Users</h2>
+                        <table id="myTable" border="1">
+                            {this.state.users.map(user => {
+                                return (
+                                    <tr>
+                                        <td>{user.name}</td>
+                                        <td>{user.email}</td>
+                                        <td>
+                                            {/*<button value="Delete" onClick={(event) => this.deleteRow(user.id, event)}>X</button>*/}
+                                            <button onClick={this.deleteRow.bind(this, user.id)}>Delete Row</button>
+
+                                        </td>
+                                    </tr>
+                                )
+                            })}
+                        </table>
+                    </React.Fragment>
+                )
+            }
+        }
+
+
+        function App() {
+            return (
+                <Table />
+            );
+        }
+
+
+
+        ReactDOM.render(
+            <App />,
+            document.querySelector('#root')
+        )
+
+
+    </script>
+</body>
+
+</html>

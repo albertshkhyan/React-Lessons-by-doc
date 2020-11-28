@@ -23,7 +23,6 @@
 
         .blue {
             background: blue;
-
         }
 
         .orange {
@@ -95,13 +94,13 @@
 
             //    console.log("hello",this);
             // }
-            
+
 
             generateRandomColor = () => {
-                    let r = Math.round((Math.random() * 255)); 
-                    let g = Math.round((Math.random() * 255)); 
-                    let b = Math.round((Math.random() * 255)); 
-                    return 'rgb(' + r + ', ' + g + ', ' + b + ')';
+                let r = Math.round((Math.random() * 255));
+                let g = Math.round((Math.random() * 255));
+                let b = Math.round((Math.random() * 255));
+                return 'rgb(' + r + ', ' + g + ', ' + b + ')';
             };
             render() {
                 const styleObject = {
@@ -128,6 +127,15 @@
             <Colors />,
             document.getElementById('root')
         );
+
+        //#dinamik type
+        // var x = 1
+        // x = "string"
+
+        //# static type
+        // var x: number = 1;
+        // x = "Hello"
+
 
     </script>
 

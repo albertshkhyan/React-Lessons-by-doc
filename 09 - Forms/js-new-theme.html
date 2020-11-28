@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <script>
+        /* ES6 computed property name */
+        https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Object_initializer#Computed_property_names
+
+        //erb vor obyekti mej grvac key gtnvum e qarakusi pakagceri mej
+
+
+        const obj = {
+            name1: "Valod",
+            name2: "Gago",
+            name3: "Gago",
+            name100343241234132: "Gago",
+        }
+
+
+        /* verohisyal orinakov vorpeszi chgrel menq karox en ogtagordzel key drvac qarakusi pakagceri mej
+
+        [key] - ays sintax-y naxatesvac e dinamik key-er stexcelu hamar. 
+        qaraliso pakagcery nshanakum vor ira mej karelia grel popoxakanner (javascript) 
+        `${  }` js
+        {  } react
+        [js] - object
+        */
+        let inc = 1;
+        const obj = {
+            name: "Valod",//name da sovorakan string e -> "name": "Valod"
+            ["name" + inc++]: "Valod",//name1
+            ["name" + inc++]: "Gagog",//name2
+            ["name" + inc++]: "Hovo",//name2
+        }
+
+        console.log(obj.name1);
+        console.log(obj.name2);
+
+
+    </script>
+</body>
+
+</html>

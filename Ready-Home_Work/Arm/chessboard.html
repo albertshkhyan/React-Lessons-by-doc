@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="root"> </div>
+
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.25.0/babel.min.js"></script>
+
+    <script type="text/babel">
+        //
+
+        /*
+        
+                      for(var i = 0; i <= 7; i++) {
+                        <tr>
+                            for(var j = 0; j <= 7; j++) {
+                    if((i + j)%2){
+                                <td bgcolor="black"> + count++ +</td>
+                            }
+                    else {
+                                <td> + count++ + </td>
+
+                            }
+                };
+                    </tr>
+                    }
+        */
+        const soldder = "https://toppng.com/uploads/preview/pawn-black-chess-piece-115328562023klzbmx1u1.png"
+        const chessboardData = [
+            // [{ url: soldder }, { url: soldder }, { url: soldder }, { url: soldder }, { url: soldder }, { url: soldder }, { url: soldder }, { url: soldder },],
+            [{ id: 1, url: soldder }, { id: 2, url: soldder }, { id: 3, url: soldder }, { id: 4, url: soldder }, { id: 5, url: soldder }, { id: 6, url: soldder }, { id: 7, url: soldder }, { id: 8, url: soldder }],
+            [{ id: 1 }, { id: 2 }, { id: 3 }, { id: 4 }, { id: 5 }, { id: 6 }, { id: 7 }, { id: 8 }],
+            [{ id: 1 }, { id: 2 }, { id: 3 }, { id: 4 }, { id: 5 }, { id: 6 }, { id: 7 }, { id: 8 }],
+            [{ id: 1 }, { id: 2 }, { id: 3 }, { id: 4 }, { id: 5 }, { id: 6 }, { id: 7 }, { id: 8 }],
+            [{ id: 1 }, { id: 2 }, { id: 3 }, { id: 4 }, { id: 5 }, { id: 6 }, { id: 7 }, { id: 8 },],
+            [{ id: 1 }, { id: 2 }, { id: 3 }, { id: 4 }, { id: 5 }, { id: 6 }, { id: 7 }, { id: 8 }],
+            [{ id: 1 }, { id: 2 }, { id: 3 }, { id: 4 }, { id: 5 }, { id: 6 }, { id: 7 }, { id: 8 }],
+            [{ id: 1 }, { id: 2 }, { id: 3 }, { id: 4 }, { id: 5 }, { id: 6 }, { id: 7 }, { id: 8 }],
+        ]
+
+        class Chess extends React.Component {
+
+
+            render() {
+                let count = 1;
+                const tr = chessboardData.map((item, i) => {
+                    console.log('item', item);
+                    return (
+                        <tr key={i}>
+                            {item.map((item, j) => {
+                                if ((i + j) % 2) {
+                                    return (<td></td>)
+                                }
+                                else {
+                                    return (<td bgColor="black"></td>)
+
+                                }
+                            })}
+                        </tr>
+                    )
+                })
+                return (
+                    <table border={1} cellspacing="0" width="500" height="500">
+                        {tr}
+                    </table>
+                );
+
+            }
+        }
+
+        ReactDOM.render(
+            <Chess />,
+            document.getElementById('root')
+        );
+
+    </script>
+</body>
+
+</html>
