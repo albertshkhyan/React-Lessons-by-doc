@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- like import -->
+    <link rel="stylesheet" href="./styles.css">
+
+</head>
+
+<body>
+    <div id="root"> </div>
+
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.25.0/babel.min.js"></script>
+    <script type="text/babel">
+
+
+
+        class Form extends React.Component {
+
+            handleSubmit = (e) => {
+                e.preventDefault()
+
+                const data = {
+                    username: e.target.username.value,
+                    password: e.target.password.value,
+                }
+                setTimeout(() => {
+                    //https://jsonplaceholder.typicode.com/users
+                }, 3000);
+
+            }
+
+            render() {
+
+                return (
+                    <div className="flex-container">
+                        <form onSubmit={this.handleSubmit} className="formContainer">
+                            <div className="log">Log in</div>
+                            <label>
+                                {/*<input onChange={this.changeValue} type="text" placeholder="Username" />*/}
+                                <input name="username" type="email" placeholder="Username" required />
+                                {/*<p className="valid-username">username not valid</p>*/}
+
+                            </label>
+                            <br />
+                            <label>
+                                {/*<input onChange={this.changeValue} type="password" placeholder="Password" />*/}
+                                <input required name="password" type="password" placeholder="Password" />
+                            </label>
+                            <br />
+                            <button type="submit">Log in</button>
+                            <br />
+                            <label>
+                                <input type="checkbox" checked="" name="remember" />
+                                Remember me
+                                <span className="psw"><a href="#">Forgot password? </a></span>
+                            </label>
+                            <div className="cna">
+                                <span><a href="#">Create an Acount</a></span>
+                            </div>
+
+                        </form>
+                    </div>
+                )
+            }
+        }
+
+        const App = (props) => {
+            return (
+                <Form />
+            )
+        }
+
+        ReactDOM.render(
+            <App />,
+            document.querySelector('#root')
+        );
+
+    </script>
+
+</html>

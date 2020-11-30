@@ -1,7 +1,9 @@
 
---------------------------- Lesson 1 -------------------
-# Home Work
- * Task 1 - https://i.imgur.com/VbhpKmU.png
- * Task 2 - 
-   * https://regexr.com/3e48o  - email validation
-* Task 3 - https://i.imgur.com/wc7vaiq.png
+# lesson 3
+
+   * nenc anel vor input-i dahstery linen sinxron.
+      lracucich - sarqel disabled
+      orinak -> https://i.imgur.com/AkaJ4xQ.png
+      09 - Forms\form-lessons-2\home-1.html
+
+   * home work - template with material ui - https://material-ui.com/getting-started/templates/sign-in/
