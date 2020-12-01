@@ -21,7 +21,7 @@
             background-color: rgba(233, 230, 230, 0.24);
         }
 
-        input[type=text],
+        input[type=email],
         input[type=password] {
             width: 100%;
             padding: 12px 20px;
@@ -31,7 +31,7 @@
             box-sizing: border-box;
         }
 
-        button {
+        input[type=submit] {
             background-color: #007BFF;
             color: white;
             padding: 14px 20px;
@@ -41,13 +41,13 @@
             width: 100%;
         }
 
-        button:hover {
+        input:hover {
             opacity: 0.8;
         }
 
         .log {
             text-align: center;
-            font-weight: b;
+            font-weight: bold;
 
         }
 
@@ -59,7 +59,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            margin-top: 15px;
+            margin-top: 10px;
         }
 
         .formContainer {
@@ -67,10 +67,10 @@
         }
 
         .flex-container {
-            height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
+            height: 100vh;
         }
     </style>
 
@@ -87,33 +87,67 @@
 
 
         class Form extends React.Component {
+
+            state = {
+                email: "",
+                password: "",
+                repeate_passw: ""
+            }
+
+            handleSubmit = (e) => {
+
+                e.preventDefault()
+                console.log("on submit work");
+
+                const data = {
+                    username: e.target.username.value,
+                    password: e.target.password.value,
+                    repeate_passw: e.target.repeat_password.value
+                }
             
+            }
+
+            validatePassword = (e) => {
+            
+                this.setState({
+                    repeate_passw: e.target.value
+                })
+
+            }
+
 
             render() {
+
+                const { password, repeate_passw } = this.state;
+                const enabled =( password !== repeate_passw); 
+
                 return (
                     <div className="flex-container">
-                        <form className="formContainer">
+                        <form onSubmit={this.handleSubmit} className="formContainer">
                             <div className="log">Log in</div>
                             <label>
-                                <input type="text" placeholder="Username" required />
+                                <input name="username" type="email" placeholder="Username" required />
                             </label>
                             <br />
                             <label>
-                                <input type="text" placeholder="Password" required />
+                                <input onChange={this.validatePassword} name="password" type="password" placeholder="Password" required />
+                            </label>
+                            <label>
+                                <input name="repeat_password" type="password" placeholder="Repeat password" required />
                             </label>
                             <br />
-                            <button type="submit">Log in</button>
+                            <input disabled={!enabled} type="submit" value="Log in" />
                             <br />
                             <label>
-                                <input type="checkbox" checked="" name="remember" />
+                                <input type="checkbox" name="remember" />
                                 Remember me
                                 <span className="psw"><a href="#">Forgot password? </a></span>
                             </label>
                             <div className="cna">
                                 <span><a href="#">Create an Acount</a></span>
                             </div>
-                        </form>
 
+                        </form>
                     </div>
                 )
             }

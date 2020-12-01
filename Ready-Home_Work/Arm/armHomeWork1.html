@@ -87,22 +87,51 @@
 
 
         class Form extends React.Component {
-            
 
+            state = {
+                Username: "",
+                Password: ""
+            }
+            
+                
+            handleUserNameChange = (e) => {
+                return this.setState({ Username: e.target.value });
+            }
+
+
+            onPasswordChange = (e) => {
+                return this.setState({ Password: e.target.value });
+            }
+
+            handleSubmit = () => {
+                const { Username, Password } = this.state;
+                alert(`Login ${Username} Password: ${Password}`);
+            }
+
+            
             render() {
+                const { Username, Password } = this.state;
+                const enabled =
+                    Username.length > 0 &&
+                    Password.length > 0;
+
                 return (
                     <div className="flex-container">
-                        <form className="formContainer">
+                        <form className="formContainer" onSubmit={this.handleSubmit}>
                             <div className="log">Log in</div>
                             <label>
-                                <input type="text" placeholder="Username" required />
+                                <input type="text" placeholder="Username" 
+                                value={this.state.Username}
+                                onChange={this.handleUserNameChange}  />
                             </label>
                             <br />
                             <label>
-                                <input type="text" placeholder="Password" required />
+                                <input type="text" placeholder="Password" 
+                                value={this.state.Password}
+                                onChange={this.onPasswordChange}  />
                             </label>
                             <br />
-                            <button type="submit">Log in</button>
+                            <button disabled={!enabled}>Login</button>
                             <br />
                             <label>
                                 <input type="checkbox" checked="" name="remember" />
