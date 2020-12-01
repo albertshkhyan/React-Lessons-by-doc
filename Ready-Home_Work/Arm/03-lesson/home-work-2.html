@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            /* box-sizing: border-box; */
+        }
+
+        form {
+            width: 300px;
+            height: 240px;
+            border: 3px solid #f1f1f1;
+            background-color: rgba(233, 230, 230, 0.24);
+        }
+
+        input[type=email],
+        input[type=password] {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+
+        input[type=submit] {
+            background-color: #007BFF;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        input:hover {
+            opacity: 0.8;
+        }
+
+        .log {
+            text-align: center;
+            font-weight: bold;
+
+        }
+
+        span.psw {
+            float: right;
+        }
+
+        .cna {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 10px;
+        }
+
+        .formContainer {
+            padding: 20px;
+        }
+
+        .flex-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div id="root"> </div>
+
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.25.0/babel.min.js"></script>
+    <script type="text/babel">
+
+
+
+        class Form extends React.Component {
+
+            state = {
+                email: "",
+                password: "",
+                repeate_passw: ""
+                //hushum nor value petqa avelacnel state-i mej
+            }
+
+            handleSubmit = (e) => {
+                // console.log('-------------', e.target.password.value, e.target.repeat_password.value);
+                e.preventDefault()
+
+                // console.log('this.state.password', this.state.password);
+                // console.log('this.state.repeate_passw', this.state.repeate_passw);
+
+                if (e.target.password.value === e.target.repeat_password.value) {
+                    //console.log("on submit work");
+                }
+                else {
+                    //console.log("not corrrect password");
+                }
+                const data = {
+                    username: e.target.username.value,
+                    password: e.target.password.value,
+                    repeate_passw: e.target.repeat_password.value
+                }
+
+            }
+
+            // validatePassword = (e) => {
+            //     console.log(' e.target',  e.target);
+
+            //     this.setState({
+            //         repeate_passw: e.target.value
+            //     })
+
+            // }
+
+
+            render() {
+
+                const { password, repeate_passw } = this.state;
+                const enabled = (password !== repeate_passw);
+
+                return (
+                    <div className="flex-container">
+                        <form onSubmit={this.handleSubmit} className="formContainer">
+                            <div className="log">Log in</div>
+                            <label>
+                                <input name="username" type="email" placeholder="Username" required />
+                            </label>
+                            <br />
+                            <label>
+                                <input onChange={this.validatePassword} name="password" type="password" placeholder="Password" required />
+                            </label>
+                            <label>
+                                <input name="repeat_password" type="password" placeholder="Repeat password" required />
+                            </label>
+                            <br />
+                            <input type="submit" value="Log in" />
+                            <br />
+                            <label>
+                                <input type="checkbox" name="remember" />
+                                Remember me
+                                <span className="psw"><a href="#">Forgot password? </a></span>
+                            </label>
+                            <div className="cna">
+                                <span><a href="#">Create an Acount</a></span>
+                            </div>
+
+                        </form>
+                    </div>
+                )
+            }
+        }
+
+        const App = (props) => {
+            return (
+                <Form />
+            )
+        }
+
+        ReactDOM.render(
+            <App />,
+            document.querySelector('#root')
+        );
+
+    </script>
+
+</html>
